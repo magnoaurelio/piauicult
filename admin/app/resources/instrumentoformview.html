@@ -1,0 +1,56 @@
+<!--[main]-->
+<div class="tform">
+    <table style="width:640px">
+        <tr class="tformtitle">
+            <td colspan="2"> <label> Instrumento </label> </td>
+        </tr>
+        <tbody class="formdata">
+
+            <tr class="">
+                <td style="font-weight:bold"  align="right">Código</td>
+                <td style="padding-left:10px" align="left">{$inscodigo}</td>
+            </tr>
+
+            <tr class="oddrow">
+                <td style="font-weight:bold"  align="right">Instrumento</td>
+                <td style="padding-left:10px" align="left">{$insnome}</td>
+            </tr>
+
+            <tr class="">
+                <td style="font-weight:bold"  align="right">Assessorio1</td>
+                <td style="padding-left:10px" align="left">{$insassessorio1}</td>
+            </tr>
+
+            <tr class="oddrow">
+                <td style="font-weight:bold"  align="right">Asessorio2</td>
+                <td style="padding-left:10px" align="left">{$insassessorio2}</td>
+            </tr>
+
+            <tr class="">
+                <td style="font-weight:bold"  align="right">Assessorio3</td>
+                <td style="padding-left:10px" align="left">{$insassessorio3}</td>
+            </tr>
+
+            <tr class="oddrow">
+                <td style="font-weight:bold"  align="right">Qte</td>
+                <td style="padding-left:10px" align="left">{$insquant}</td>
+            </tr>
+
+            <tr class="">
+                <td style="font-weight:bold"  align="right">Imagem</td>
+                <td style="padding-left:10px" align="left">{$insfoto}</td>
+            </tr>
+
+
+            <tr class="tformaction">
+                <td colspan="2" align="right">
+                    <a generator="adianti" href="index.php?class=InstrumentoForm&method=onEdit&inscodigo={$inscodigo}&key={$inscodigo}" class="btn btn-default">
+                        <span class="fa fa-pencil-square-o"></span>
+                        Edit
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--[/main]-->

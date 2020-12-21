@@ -1,0 +1,289 @@
+<menu>
+    <menuitem label='_t{Administration}'>
+        <icon>fa:university fa-fw</icon>
+        <menu>
+            <menuitem label='_t{Programs}'>
+                <icon>fa:file-code-o fa-fw</icon>
+                <action>SystemProgramList</action>
+            </menuitem>
+            <menuitem label='_t{Groups}'>
+                <icon>fa:users fa-fw</icon>
+                <action>SystemGroupList</action>
+            </menuitem>
+            <menuitem label='_t{Units}'>
+                <icon>fa:university fa-fw</icon>
+                <action>SystemUnitList</action>
+            </menuitem>
+              <menuitem label='Sobre'>
+                <icon>fa:info fa-fw</icon>
+                <action>SobreForm</action>
+            </menuitem>
+            <menuitem label='_t{Users}'>
+                <icon>fa:user fa-fw</icon>
+                <action>SystemUserList</action>
+            </menuitem>
+            <menuitem label='_t{SQL Panel}'>
+                <icon>fa:table fa-fw</icon>
+                <action>SystemSQLPanel</action>
+            </menuitem>
+            <menuitem label='PHP Info'>
+                <icon>fa:code fa-fw</icon>
+                <action>SystemPHPInfoView</action>
+            </menuitem>
+            <menuitem label='_t{Preferences}'>
+                <icon>fa:cog fa-fw</icon>
+                <action>SystemPreferenceForm#method=onEdit</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    
+    <menuitem label='PIAUICULT'>
+        <icon>fa:file-text-o fa-fw</icon>
+        <menu>
+           <menuitem label='ARTISTAS'>
+                    <icon>fa:star fa-fw</icon>
+              <menu>
+                    <menuitem label='ARTISTA - Publicar'>
+                       <icon>fa:star fa-fw</icon>
+                       <action>ArtistaList</action>
+                   </menuitem>
+                   <menuitem label='ARTISTA - Tipo'>
+                       <icon>fa:star fa-fw</icon>
+                       <action>ArtistaTipoFormList</action>
+                   </menuitem>
+                   <menuitem label='ARTISTA - Instrumento'>
+                       <icon>fa:star fa-fw</icon>
+                       <action>InstrumentoList</action>
+                   </menuitem>
+            </menu>
+         </menuitem>
+             <menuitem label='DISCOS'>
+                <icon>fa:music fa-fw</icon>
+                <action>DiscoList</action>
+            </menuitem>
+              <menuitem label='MÚSICA'>
+                    <icon>fa:music fa-fw</icon>
+                    <menu>
+                        <menuitem label='MÚSICAS - Publicar'>
+                            <icon>fa:music fa-fw</icon>
+                            <action>MusicaList</action>
+                        </menuitem>
+                        <menuitem label='MUSICAS - Gênero'>
+                            <icon>fa:music fa-fw</icon>
+                            <action>GeneroFormList</action>
+                        </menuitem>
+                    </menu>
+                </menuitem>
+                <menuitem label='GALERIA'>
+                      <icon>fa:image fa-fw</icon>
+                      <action>GaleriaList</action>
+                 </menuitem>
+                <menuitem label='NOTÍCIAS'>
+                    <icon>fa:info fa-fw</icon>
+                    <menu>
+                        <menuitem label='NOTÍCIA - Publicar'>
+                            <icon>fa:info fa-fw</icon>
+                            <action>NoticiasList</action>
+                        </menuitem>
+                        <menuitem label='NOTÍCIA - Topo'>
+                            <icon>fa:info fa-fw</icon>
+                            <action>TopoList</action>
+                        </menuitem>
+                        <menuitem label='NOTÍCIA - Rodapé'>
+                            <icon>fa:info fa-fw</icon>
+                            <action>RodapeList</action>
+                        </menuitem>
+                    </menu>
+                </menuitem>
+                 <menuitem label='EVENTOS'>
+                <icon>fa:newspaper-o fa-fw</icon>
+                <menu>
+                    <menuitem label='EVENTOS - Publicar'>
+                        <icon>fa:newspaper-o fa-fw</icon>
+                        <action>EventosList</action>
+                    </menuitem>
+                    <menuitem label='EVENTOS - Locais'>
+                        <icon>fa:map-marker fa-fw</icon>
+                        <action>EventosLocalList</action>
+                    </menuitem>
+                </menu>
+            </menuitem>
+            <menuitem label='FESTIVAIS'>
+                <icon>fa:newspaper-o fa-fw</icon>
+                <menu>
+                    <menuitem label='FESTIVAL - Publicar'>
+                        <icon>fa:newspaper-o fa-fw</icon>
+                        <action>FestivalList</action>
+                    </menuitem>
+                    <menuitem label='FESTIVAL - Prêmio'>
+                        <icon>fa: fa-trophy fa-fw</icon>
+                        <action>Festival_premioFormList</action>
+                    </menuitem>
+                     <menuitem label='FESTIVAL - Tipo '>
+                        <icon>fa:map-marker fa-fw</icon>
+                        <action>Festival_tipoFormList</action>
+                    </menuitem>
+                    <menuitem label='HUMOR - Publicar'>
+                        <icon>fa:smile-o fa-fw</icon>
+                        <action>HumorList</action>
+                    </menuitem>
+                    <menuitem label='HUMOR - Categoria'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>HumorCategoriaFormList</action>
+                    </menuitem>
+                    <menuitem label='CINEMA - Publicar'>
+                        <icon>fa:film fa-fw</icon>
+                        <action>CinemaList</action>
+                    </menuitem>
+                    <menuitem label='CINEMA - Gênero'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>CinemaGeneroFormList</action>
+                    </menuitem>
+                     <menuitem label='LITERATURA - Publicar'>
+                        <icon>fa:book fa-fw</icon>
+                        <action>LiteraturaList</action>
+                    </menuitem>
+                    <menuitem label='LITERATURA - Categoria'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>LiteraturaCategoriaFormList</action>
+                    </menuitem>
+                   
+                     <menuitem label='TEATRO - Publicar'>
+                        <icon>fa:star fa-fw</icon>
+                        <action>TeatroGeneroFormList</action>
+                    </menuitem>
+                    <menuitem label='TEATRO - Gênero'>
+                        <icon>fa:cube fa-fw</icon>
+                        <action>TeatroGeneroFormList</action>
+                    </menuitem>
+                </menu>
+            </menuitem>
+            
+            <menuitem label='VIDEOS'>
+                <icon>fa:play fa-fw</icon>
+                <action>VideosList</action>
+            </menuitem>
+            <menuitem label='RADIO'>
+                <icon>fa:wifi fa-fw</icon>
+                <menu>
+                    <menuitem label='RADIO - Publicar'>
+                        <icon>fa:wifi fa-fw</icon>
+                    <action>EmissoraList</action>
+                    </menuitem>
+                     <menuitem label='RADIO -Programação'>
+                        <icon>fa:play-circle fa-fw</icon>
+                        <action>ProgramacaoList</action>
+                    </menuitem>
+                    <menuitem label='RADIO - Apresentador'>
+                        <icon>fa:microphone fa-fw</icon>
+                        <action>ApresentadorList</action>
+                    </menuitem>
+                </menu>
+            </menuitem>
+             <menuitem label='GRUPOS'>
+                <icon>fa: fa-users fa-fw</icon>
+                <menu>
+                    <menuitem label='GRUPOS- Publicar'>
+                        <icon>fa: fa-users fa-fw</icon>
+                        <action>BandaList</action>
+                    </menuitem>
+                     <menuitem label='GRUPOS - Tipo'>
+                        <icon>fa: fa-users fa-fw</icon>
+                        <action>BandaTipoList</action>
+                    </menuitem>
+                </menu>
+             </menuitem>
+            <menuitem label='LINKS'>
+                <icon>fa:image fa-fw</icon>
+                <action>LinksList</action>
+            </menuitem>
+             <menuitem label='CLIENTES'>
+                <icon>fa:user-o fa-fw</icon>
+                <menu>
+                    <menuitem label='CLIENTES Publicar'>
+                        <icon>fa:user-o fa-fw</icon>
+                        <action>ClienteList</action>
+                    </menuitem>
+                    <menuitem label='PRODUTO - Tipo'>
+                        <icon>fa:user-o fa-fw</icon>
+                        <action>ClienteProdutoFormList</action>
+                    </menuitem>
+                </menu>
+             </menuitem>
+            <menuitem label='LIVRO'>
+                <icon>fa:book fa-fw</icon>
+                <menu>
+                <menuitem label='LIVRO - Publicar'>
+                    <icon>fa:book fa-fw</icon>
+                    <action>LivroList</action>
+                </menuitem>
+                <menuitem label='LIVRO - Poesia'>
+                    <icon>fa:book fa-fw</icon>
+                    <action>LivroList</action>
+                </menuitem>
+                </menu>
+            </menuitem>
+            
+                <menuitem label='PROJETOS'>
+                    <icon>fa:play-circle-o fa-fw</icon>
+                    <action>ProjetoList</action>
+                </menuitem>
+           
+
+        </menu>
+    </menuitem>
+    
+    <menuitem label='Informações'>
+        <icon>fa:desktop fa-fw</icon>
+        <menu>
+            <menuitem label='_t{Access Stats}'>
+                <icon>fa:bar-chart fa-fw</icon>
+                <action>SystemAccessLogStats</action>
+            </menuitem>
+            <menuitem label='_t{Access Log}'>
+                <icon>fa:key fa-fw</icon>
+                <action>SystemAccessLogList</action>
+            </menuitem>
+            <menuitem label='_t{Change Log}'>
+                <icon>fa:film fa-fw</icon>
+                <action>SystemChangeLogView</action>
+            </menuitem>
+            <menuitem label='_t{SQL Log}'>
+                <icon>fa:database fa-fw</icon>
+                <action>SystemSqlLogList</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+        
+    <menuitem label='Common pages'>
+        <menu>
+            <menuitem label='Common page 1'>
+                <icon></icon>
+                <action>CommonPage</action>
+            </menuitem>
+            <menuitem label='Common page 2'>
+                <icon></icon>
+                <action>CommonPage</action>
+            </menuitem>
+            <menuitem label='Common page 3'>
+                <icon></icon>
+                <action>CommonPage</action>
+            </menuitem>
+        </menu>
+    </menuitem>
+    
+    <menuitem label='Saída'>
+        <icon>fa:sign-out fa-fw</icon>
+        <menu>
+            <menuitem label='Perfil'>
+                <icon>fa:user</icon>
+                <action>SystemProfileView</action>
+            </menuitem>
+              
+            <menuitem label='Saír'>
+                <action>LoginForm#method=onLogout#static=1</action>
+                <icon>fa:sign-out fa-fw</icon>
+            </menuitem>
+        </menu>
+    </menuitem>
+</menu>

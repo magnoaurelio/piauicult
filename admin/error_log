@@ -1,0 +1,144 @@
+[03-Aug-2017 09:56:28 America/Sao_Paulo] PHP Fatal error:  Call to a member function getProgramsList() on null in /home/piauicul/public_html/admin/app/control/SearchBox.class.php on line 45
+[03-Aug-2017 09:57:58 America/Sao_Paulo] PHP Fatal error:  Call to a member function setSize() on null in /home/piauicul/public_html/admin/app/control/admin/SystemUserForm.class.php on line 101
+[03-Aug-2017 09:58:01 America/Sao_Paulo] PHP Fatal error:  Call to a member function setSize() on null in /home/piauicul/public_html/admin/app/control/admin/SystemUserForm.class.php on line 101
+[03-Aug-2017 09:58:06 America/Sao_Paulo] PHP Fatal error:  Call to a member function setSize() on null in /home/piauicul/public_html/admin/app/control/admin/SystemUserForm.class.php on line 101
+[03-Aug-2017 09:59:32 America/Sao_Paulo] PHP Fatal error:  Call to a member function setSize() on null in /home/piauicul/public_html/admin/app/control/admin/SystemUserForm.class.php on line 101
+[03-Aug-2017 09:59:35 America/Sao_Paulo] PHP Fatal error:  Call to a member function setSize() on null in /home/piauicul/public_html/admin/app/control/admin/SystemUserForm.class.php on line 101
+[04-Aug-2017 08:11:55 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[04-Aug-2017 08:22:12 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[04-Aug-2017 09:06:55 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[04-Aug-2017 09:47:23 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[04-Aug-2017 10:18:39 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[05-Aug-2017 11:30:45 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[05-Aug-2017 11:39:49 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[06-Aug-2017 04:30:24 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[06-Aug-2017 04:36:35 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[07-Aug-2017 07:19:56 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[07-Aug-2017 07:35:06 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[07-Aug-2017 07:35:40 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[15-Aug-2017 06:20:47 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[15-Aug-2017 06:29:46 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[19-Aug-2017 16:56:40 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[19-Aug-2017 16:56:47 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[21-Aug-2017 10:49:58 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[21-Aug-2017 10:52:39 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[21-Aug-2017 10:53:49 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[21-Aug-2017 10:54:49 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[21-Aug-2017 10:57:07 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 242
+[22-Aug-2017 18:17:46 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[22-Aug-2017 18:22:54 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[24-Aug-2017 15:13:48 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[24-Aug-2017 15:18:10 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[24-Aug-2017 15:18:22 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[24-Aug-2017 15:34:39 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[11-Sep-2017 12:42:26 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[14-Sep-2017 19:47:42 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[14-Sep-2017 19:49:35 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[14-Sep-2017 20:17:54 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[17-Sep-2017 22:32:37 America/Sao_Paulo] PHP Warning:  POST Content-Length of 98868056 bytes exceeds the limit of 83886080 bytes in Unknown on line 0
+[28-Sep-2017 21:39:36 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[28-Sep-2017 21:52:26 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[28-Sep-2017 21:54:03 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[28-Sep-2017 21:54:29 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[28-Sep-2017 21:55:23 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[28-Sep-2017 21:55:54 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[28-Sep-2017 22:09:11 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[14-Dec-2017 19:47:26 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[14-Dec-2017 19:48:48 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[14-Dec-2017 19:49:42 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[14-Dec-2017 19:50:31 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[14-Dec-2017 19:50:56 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[14-Dec-2017 20:21:48 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[30-Jan-2018 22:34:06 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[30-Jan-2018 22:41:12 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 248
+[07-Feb-2018 13:25:40 America/Sao_Paulo] PHP Fatal error:  Call to undefined method SystemUser::getSystemUserUnitIds() in /home/piauicul/public_html/admin/app/control/admin/LoginForm.class.php on line 141
+[07-Feb-2018 13:25:44 America/Sao_Paulo] PHP Fatal error:  Call to undefined method SystemUser::getSystemUserUnitIds() in /home/piauicul/public_html/admin/app/control/admin/LoginForm.class.php on line 141
+[08-Feb-2018 19:01:32 America/Sao_Paulo] PHP Warning:  trim() expects parameter 1 to be string, array given in /home/piauicul/public_html/admin/lib/adianti/widget/wrapper/TDBCombo.php on line 42
+[08-Feb-2018 19:01:41 America/Sao_Paulo] PHP Warning:  trim() expects parameter 1 to be string, array given in /home/piauicul/public_html/admin/lib/adianti/widget/wrapper/TDBCombo.php on line 42
+[09-Feb-2018 11:47:23 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[09-Feb-2018 12:19:09 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[09-Feb-2018 12:19:32 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[09-Feb-2018 12:32:18 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[10-Feb-2018 10:27:57 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[10-Feb-2018 10:51:05 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[12-Feb-2018 11:52:30 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[12-Feb-2018 11:52:47 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[12-Feb-2018 11:59:09 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[12-Feb-2018 11:59:35 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[13-Feb-2018 12:08:25 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[13-Feb-2018 12:10:54 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[13-Feb-2018 12:11:39 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[13-Feb-2018 12:19:04 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[13-Feb-2018 12:19:40 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[13-Feb-2018 12:25:17 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[15-Feb-2018 13:11:42 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[15-Feb-2018 13:12:53 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[15-Feb-2018 13:13:05 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[15-Feb-2018 13:16:25 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[15-Feb-2018 16:49:45 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[15-Feb-2018 17:12:41 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[15-Feb-2018 18:53:13 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[16-Feb-2018 13:32:24 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[16-Feb-2018 13:39:10 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[16-Feb-2018 17:33:56 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[16-Feb-2018 17:43:44 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[17-Feb-2018 12:16:57 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[20-Feb-2018 08:44:06 America/Sao_Paulo] PHP Warning:  trim() expects parameter 1 to be string, array given in /home/piauicul/public_html/admin/lib/adianti/widget/wrapper/TDBCombo.php on line 42
+[20-Feb-2018 09:12:13 America/Sao_Paulo] PHP Warning:  trim() expects parameter 1 to be string, array given in /home/piauicul/public_html/admin/lib/adianti/widget/wrapper/TDBCombo.php on line 42
+[20-Feb-2018 09:14:51 America/Sao_Paulo] PHP Warning:  trim() expects parameter 1 to be string, array given in /home/piauicul/public_html/admin/lib/adianti/widget/wrapper/TDBCombo.php on line 42
+[20-Feb-2018 17:32:19 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[20-Feb-2018 17:40:15 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[20-Feb-2018 17:40:33 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[20-Feb-2018 17:44:46 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[20-Feb-2018 17:44:57 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[20-Feb-2018 17:50:42 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[21-Feb-2018 08:23:22 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[23-Feb-2018 07:45:19 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[23-Feb-2018 08:03:06 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[26-Feb-2018 11:44:52 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[27-Feb-2018 11:47:51 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[28-Feb-2018 04:32:24 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[28-Feb-2018 04:39:44 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[28-Feb-2018 05:24:28 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[28-Feb-2018 05:26:25 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[28-Feb-2018 05:26:39 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[28-Feb-2018 05:27:39 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[28-Feb-2018 05:29:22 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[02-Mar-2018 10:01:37 America/Sao_Paulo] PHP Warning:  base64_encode() expects parameter 1 to be string, array given in /home/piauicul/public_html/admin/api.php on line 148
+[02-Mar-2018 10:01:41 America/Sao_Paulo] PHP Warning:  base64_encode() expects parameter 1 to be string, array given in /home/piauicul/public_html/admin/api.php on line 148
+[02-Mar-2018 10:05:18 America/Sao_Paulo] PHP Warning:  base64_encode() expects parameter 1 to be string, array given in /home/piauicul/public_html/admin/api.php on line 148
+[02-Mar-2018 12:06:12 America/Sao_Paulo] PHP Fatal error:  Class 'Sobre' not found in /home/piauicul/public_html/admin/app/control/SobreForm.class.php on line 84
+[05-Mar-2018 03:43:58 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 04:31:00 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 10:46:48 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 10:47:29 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 10:47:56 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 11:02:44 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 11:45:20 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 11:53:32 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 11:58:12 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 12:12:53 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 12:34:13 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 12:34:51 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 12:41:04 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 17:06:49 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[05-Mar-2018 17:12:51 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[13-Mar-2018 15:34:18 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[14-Mar-2018 09:26:24 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[14-Mar-2018 11:02:09 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[14-Mar-2018 11:02:30 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[14-Mar-2018 11:02:32 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[14-Mar-2018 11:21:54 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[14-Mar-2018 11:22:18 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[14-Mar-2018 19:57:18 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[20-Mar-2018 17:58:18 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[20-Mar-2018 18:05:16 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[20-Mar-2018 18:07:02 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[20-Mar-2018 18:07:52 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[21-Mar-2018 10:27:42 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[21-Mar-2018 10:28:52 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[22-Mar-2018 10:30:43 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[22-Mar-2018 16:03:42 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[27-Mar-2018 08:44:16 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[27-Mar-2018 09:15:05 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
+[27-Mar-2018 09:16:09 America/Sao_Paulo] PHP Warning:  Invalid argument supplied for foreach() in /home/piauicul/public_html/admin/app/control/DiscoForm.class.php on line 247
