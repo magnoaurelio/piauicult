@@ -154,9 +154,10 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                             <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Programação</a></th>
                             <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Data</a></th>
                             <th width="100"><a href="#"><i class="icon-microphone"></i> &nbsp;Apresentador</a></th>
-                            <th width="50"><a href="#"><i class="icon-picture"></i> &nbsp;Foto</a></th>
+                            <th width="100"><a href="#"><i class="icon-picture"></i> &nbsp;Foto</a></th>
+                            <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Programa</a></th>
+                            <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Horário</a></th>
                             <th width="100"><a href="#"><i class="icon-music"></i> &nbsp;Músicas</a></th>
-                            <th width="100"><a href="#"><i class="icon-time"></i> &nbsp;Duração Total</a></th>
                             
                            </table>
                         <?php
@@ -167,13 +168,16 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                          if($programacoes->getResult()) {
                              foreach ($programacoes->getResult() as $programacao){
                               //   var_dump($programacao);
+                                 $procodigo = $programacao['procodigo'];
                                  $aprcodigo = $programacao['aprcodigo'];
+                                 $pronome = $programacao['pronome'];
+                                 $prohorario = $programacao['prohorario'];
                              ?>
                         <li class="group track">
                             <table width="100%" border="0" style="margin-left: 0px;">
                                     <tr>
                                         <td width="100">
-                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
+                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>&procodigo=<?= $procodigo ?>" id="" class="search-btn">
                                               <img src="images/piauicult.jpg" width="120" alt="" />
                                               PIUAICult
                                             </a> 
@@ -185,7 +189,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                         </td>
                                         <td  width="100">
                                              <?php
-                                                $aprcodigo = $programacao['aprcodigo'];;
+                                                $aprcodigo = $programacao['aprcodigo'];
                                                 $apresentador = new Read();
                                                 $apresentador->ExeRead("apresentador", "WHERE aprcodigo = $aprcodigo ORDER BY rand() limit 1");
                                                 foreach($apresentador->getResult() as $apresentador){
@@ -205,21 +209,60 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn"" id="" class="search-btn">
                                             <img src="<?=$aprfoto?>" width="120" height="120" alt="" />
                                             </a> 
-                                            
+                                        </td>
+                                       <?php
+                                     //   $aprcodigo = $programacao['aprcodigo'];;
+                                        $aprcodigo = $programacao['aprcodigo'];
+                                        $programacao = new Read();
+                                        $programacao->ExeRead("programacao", "WHERE aprcodigo = $aprcodigo ORDER BY rand() limit 1");
+                                                foreach($programacao->getResult() as $programacao){
+                                                $procodigo = $programacao['procodigo'];
+                                                $aprcodigo = $programacao['aprcodigo'];
+                                                $pronome = $programacao['pronome'];
+                                                $prohorario = $programacao['prohorario'];
+                                        ?>
+                                      
+                                         <td  width="100">
+                                            <h4 class="track-title">
+                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn"" id="" class="search-btn">
+                                                <?=$programacao['pronome']?>
+                                            </a>
+                                            </h4>
                                         </td>
                                          <td  width="100">
+                                             <h4 class="track-title">
                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn"" id="" class="search-btn">
-                                                <?=$mus_tempo?>
+                                                <?=$programacao['prohorario']?>
                                             </a>
-                                           musicas 
+                                            </h4>
                                         </td>
-                                         <td  width="50">
+                                            <?php } ?>
+                                        <?php
+                                        $mus_tempo = 0;
+                                        $mus_qte   = 0;
+                                        $n = 0;
+                                       // $procodigo = $programacao_musica['procodigo'];
+                                        $programacao_musica = new Read();
+                                        $programacao_musica->ExeRead("programacao_musica", "WHERE procodigo = $procodigo ");
+                                                foreach($programacao_musica->getResult() as $programacao_musica){
+                                                $mus_qte = $programacao_musica['procodigo'];
+                                          //      $mus_qte = count( $mus_qte);
+                                           //     $pronome = $programacao_musica['pronome'];
+                                        ?>
+                                         <?php 
+                                         $n++;
+                                          } ?>
+                                        <td  width="50">
+                                            <h4 class="track-title">
                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn"" id="" class="search-btn">
-                                                <?=$mus_qte?>
+                                                <?=$n?> 
                                             </a>
-                                              horas
+                                               musicas 
+                                           </h4>
+                                             
                                         </td>
                                         
+                                         
                                           
                                     </tr>
                                 </table>
