@@ -31,9 +31,7 @@ class EmissoraList extends TPage
         // create the form fields
         $emicodigo = new TEntry('emicodigo');
         $eminome = new TEntry('eminome');
-        $emicidade = new TCombo('emicidade');
-        $emicidade->addItems(DadosFixos::getPrefeituras());
-     //   $emicidade = new TDBCombo('unidadeGestora', 'conexao', 'Prefeitura', 'codigoUnidGestora', '{precodigo}-{prenome}','codigoUnidGestora asc'  );
+        $emicidade = new TDBCombo('emicidade','conexao','Prefeitura','precodigo','{prenome} - {precodigo}','prenome');
         
         $emicidade->enableSearch();
 
@@ -87,7 +85,7 @@ class EmissoraList extends TPage
         });
         $column_emiimagem->setTransformer( function($value, $object, $row) {
           $img  = new TElement('img');
-          $img->src = "admin/files/emissoras/".$value;
+          $img->src = "files/emissoras/".$value;
           $img->style = "width:120px; height:80px;";
             return $img;
         });

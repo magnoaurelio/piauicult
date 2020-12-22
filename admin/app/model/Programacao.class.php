@@ -18,6 +18,8 @@ class Programacao extends TRecord
     public function __construct($id = NULL, $callObjectLoad = TRUE)
     {
         parent::__construct($id, $callObjectLoad);
+        parent::addAttribute('pronome');
+        parent::addAttribute('prohorario');
         parent::addAttribute('emicodigo');
         parent::addAttribute('dataplay');
         parent::addAttribute('aprcodigo');

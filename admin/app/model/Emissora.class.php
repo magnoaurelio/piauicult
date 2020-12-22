@@ -41,7 +41,7 @@ class Emissora extends TRecord
     
     
     function get_Cidade(){
-      return DadosFixos::getPrefeituras($this->emicidade);    
+      return getPrefeituras($this->emicidade);    
     }
 
 

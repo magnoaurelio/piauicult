@@ -54,10 +54,10 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
 ?>
 <div id="main-wrap">
     <div id="main" class="row">
-        <div class="large-9 columns">
+        <div class="large-12 columns">
             <article class="post group">
                 <?php
-                $emissora = new Emissora($_GET['id']);
+                $emissora = new Emissora($_GET['emicodigo']);
                 $imgfoto = "admin/files/emissoras/" . trim($emissora->emifoto);
                 $imgimagem = "admin/files/emissoras/" . trim($emissora->emiimagem);
 
@@ -78,7 +78,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                          }
                         ?>  
                     <h1 class="list-title">
-                        <a href="?p=emissora&id=<?=$_GET['id']?>" title="Voltar para página de EMISSORAS "> 
+                        <a href="?p=emissora&precodigo=<?= $precodigo?>" title="Voltar para página de EMISSORAS "> 
                             <!--img style="float: left;" src="<?=$brasao ?>" width="60" height="60" alt="" /> &nbsp; 
                         <img style="float: left;" src="<?=$bandeira ?>" width="80" height="60" alt="" /-->
                         <?= $prenome?>&nbsp;&nbsp;&nbsp;&nbsp; <!--i class="icon-reply"></i-->
@@ -88,8 +88,9 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                         <img src="<?= $imgfoto ?>" width="80" height="80"  /> 
                         
                         <a href="<?=$emissora->emisite?>" target="_blanck" title="Veja o SITE da <?=$emissora->eminome?>">
-                                <?= $emissora->eminome ?>&nbsp;<span style="color:#000;font-size: 22;">(Emissora)</span>
+                                <?= $emissora->eminome ?>&nbsp;-  Programações
                         </a>
+                        
                         <?php if ($emissora->emivivo <> '') { ?>
                          <a href="<?=$emissora->emivivo?>" target="_blanck" title="Ouça Ao Vivo <?=$emissora->eminome?>">
                              <img src="images/FONE DE OUVIDO0.png" width="80" height="80"  />
@@ -101,17 +102,18 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                         <?php } ?>
                     </h2>
                 </header>
-                 <h4>
+                 <!--h4>
                      &nbsp;
                        <a href="<?=$emissora->emisite?>" target="_blanck" title="Veja o SITE da <?=$emissora->eminome?>">
                            &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#000;font-size: 22;">
                            Profissionais</span> 
                        </a>
-                   </h4>
+                   </h4-->
                 <?php
-                $apremissora = $_GET['id'];
+                $apremissora = $_GET['emicodigo'];
+                $aprcodigo = $_GET['aprcodigo'];
                 $apresentador = new Read();
-                $apresentador->ExeRead("apresentador", "WHERE apremissora = $apremissora ORDER BY rand() limit 20");
+                $apresentador->ExeRead("apresentador", "WHERE apremissora = $apremissora and aprcodigo = $aprcodigo ORDER BY rand() limit 10");
                 ?>
                
                  <article class="post group">
@@ -126,12 +128,12 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                             endif;
                     ?>
                     
-                    <div class="large-4 columns sidebar sidebar-1">
+                    <!--div class="large-4 columns sidebar sidebar-1">
                        <aside class="widget group" style="margin-bottom: 0px;">
                            <ol class="widget-list widget-list-single" >
                             <li style="max-height: 300px; min-height: 300px; margin-bottom:0px;">
                                 <figure class="event-thumb">
-                                    <a  href="?p=emissora-programacao-apresentador&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn" title="Acesse a PROGRAMAÇÃO do: <?=$apresentador['aprnome']?> da Emissora: <?=$emissora->eminome?>  ">
+                                    <a  href="<?=$emissora->emisite?>" target="_blanck" title="Acesse o SITE da: <?=$emissora->eminome?> e Veja: <?=$apresentador['aprnome']?>">
                                     <img src="<?=$aprfoto?>" width="250" height="250" alt="" />
                                     <div class="overlay icon-info-sign"></div>
                                     </a>
@@ -142,39 +144,24 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                   
                      </ol>
                     </aside>
-                 </div> 
+                 </div--> 
                  <?php  endforeach; ?>
                  </article> 
-                
-                <div class="entry-content">
-                <ul class="cpt-meta">
-                    <li><span>Cidade: </span><?=$prenome?></li>
-                    <li><span>Estado: </span><?=$emissora->emiestado?></li>
-                    <li><span>Endereço:</span> <?=$emissora->emiendereco?></li>
-                    <li><span>Bairro: </span><?=$emissora->emibairro?></li>
-                    <li><span>Cep:</span> <?=$emissora->emicep?></li>
-                    <li><span>Contato:</span> <?=$emissora->emicontato?></li>
-                    <li><span>Email: </span> <?=$emissora->emiemail?></li>
-                    <li><span>Site: </span>
-                        <a  href="<?=$emissora->emisite?>" target="_blanck" title="Acesse o SITE da <?=$emissora->eminome?> " ><?=$emissora->emisite?>
-                        </a>
-                    </li>
-                    <li><h3>Sobre:</h3><span style="width: 100%;"><?=$emissora->emisobre?></span></li>
-                </ul>
-                    <h3>Programações</h3>
-                    
-                    <ol class="tracklisting">
+           <div class="entry-content">
+               <ol class="tracklisting">
                           <table width="100%" border="0" style="margin-left: 0px;">
                             
                             <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Programação</a></th>
-                            <th width="75"><a href="#"><i class="icon-calendar"></i> &nbsp;Data</a></th>
+                            <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Data</a></th>
                             <th width="100"><a href="#"><i class="icon-microphone"></i> &nbsp;Apresentador</a></th>
                             <th width="50"><a href="#"><i class="icon-picture"></i> &nbsp;Foto</a></th>
                             <th width="100"><a href="#"><i class="icon-music"></i> &nbsp;Músicas</a></th>
-                            <th width="100"><a href="#"><i class="icon-time"></i> &nbsp;Duração</a></th>
+                            <th width="100"><a href="#"><i class="icon-time"></i> &nbsp;Duração Total</a></th>
                             
                            </table>
                         <?php
+                         $mus_qte = 0;
+                         $mus_tempo = 0;
                          $programacoes =  new Read();
                          $programacoes->ExeRead("programacao","WHERE emicodigo = :cod", "cod={$emissora->emicodigo}");
                          if($programacoes->getResult()) {
@@ -187,17 +174,15 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                     <tr>
                                         <td width="100">
                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
-                                              <img src="images/piauicult.jpg" width="70" alt="" />
+                                              <img src="images/piauicult.jpg" width="120" alt="" />
                                               PIUAICult
                                             </a> 
                                         </td>
-                                        <td  width="100">
-                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="">
+                                         <td  width="100">
+                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
                                                 <h4 class="track-title"><?= DataCalendario::date2br($programacao['dataplay']) ?></h4>
                                              </a> 
                                         </td>
-                                      
-                                        
                                         <td  width="100">
                                              <?php
                                                 $aprcodigo = $programacao['aprcodigo'];;
@@ -211,27 +196,31 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                                         endif;
                         
                                                ?>
-                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class=""> 
+                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn"" id="" class=""> 
                                                 <h4 class="track-title"><?= $aprnome ?></h4>
                                              </a> 
                                              <?php } ?>
                                         </td>
                                           <td width="100" style="padding-left: 0px;">
-                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
-                                            <img src="<?=$aprfoto?>" width="70" height="70" alt="" />
+                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn"" id="" class="search-btn">
+                                            <img src="<?=$aprfoto?>" width="120" height="120" alt="" />
                                             </a> 
-                            
+                                            
                                         </td>
                                          <td  width="100">
-                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
-                                            <img src="images/FONE DE OUVIDO0.png" width="70" alt="" />
+                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn"" id="" class="search-btn">
+                                                <?=$mus_tempo?>
                                             </a>
+                                           musicas 
                                         </td>
-                                         <td  width="100">
-                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
-                                              <img src="images/FONE DE OUVIDO0.png" width="70" alt="" />
+                                         <td  width="50">
+                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn"" id="" class="search-btn">
+                                                <?=$mus_qte?>
                                             </a>
+                                              horas
                                         </td>
+                                        
+                                          
                                     </tr>
                                 </table>
                             </li> 
@@ -241,140 +230,11 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                         }
                         ?>
                     </ol>
-            </article>
+           </div>
+               
+         </article>
         </div>
-        <div class="large-3 columns sidebar sidebar-1">
-            <aside class="widget group">
-                <ol class="widget-list widget-list-single">
-                    <li>
-                        <figure class="event-thumb">
-                            <a href="<?= $imgfoto ?>" data-rel="prettyPhoto">
-                                <img src="<?= $imgfoto ?>" />
-                                <div class="overlay icon-zoom-in"></div>								
-                            </a>
-                        </figure>
-                        Site:<br>
-                        <a  href="<?=$emissora->emisite?>" target="_blanck" title="Acesse o SITE da <?=$emissora->eminome?> " ><?= $emissora->emisite?>
-                        </a>
-                    </li>
-                    <li>
-                        <figure class="event-thumb">
-                            <a href="<?= $imgimagem ?>" data-rel="prettyPhoto">
-                                <img src="<?= $imgimagem ?>" />
-                                <div class="overlay icon-zoom-in"></div>								
-                            </a>
-                        </figure>
-                       
-                    
-               <aside class="widget group">
-                   <h4 class="list-subtitle" >Redes Sociais</h4>  
-                 <ol class="widget-list widget-list-single">
-                   
-                   
-                  <nav id="nav">
-                      <ul id="navigation" class="group" >
-                          
-                         
-                      <li width = "40">
-                         <a href="<?= $emissora->emifacebook ?>" target="_blank" class="" title="Siga <?= trim($emissora->eminome) ?> no Facebook.  ">
-                             <img class="par" width="28" height="28" src="images/facebook1.png"/>
-                         </a>
-                      </li>
-                      <li>
-                         <a href="<?= $emissora->emiinstagram ?>" target="_blank" class="" title="Siga  <?= trim($emissora->eminome) ?> no Instagram.">
-                              <img class="par" width="28" height="28" src="images/instagram1.png"/>
-                         </a>
-                      </li>
-                      <li>
-                         <a href="<?= $emissora->emitwitter ?>" target="_blank" class="" title="Siga <?= trim($emissora->eminome) ?> no Twitter." >
-                              <img class="par" width="28" height="28" src="images/twitter1.png"/>
-                         </a>
-                      </li>
-                      <li>
-                         <a href="<?= $emissora->emiyuotube ?>" target="_blank" class="" title="Siga  <?= trim($emissora->eminome) ?> no Yuo Tube.">
-                              <img class="par" width="28" height="28" src="images/yuotube1.png"/>
-                         </a>
-                       </li>
-                      <li>
-                         <a href="<?= $emissora->emiwhatsapp ?>" target="_blank" class="" title="Siga <?= trim($emissora->eminome) ?> no WhatsApp.">
-                            <img class="par" width="28" height="28" src="images/whatsapp1.png"/>
-                         </a>
-                       </li>
-                    </ul>
-                  </nav>
-                  </ol>
-                   </li>
-           </aside><!-- /widget -->
-                </ol>
-                
-            </aside><!-- /widget -->
-               <aside class="widget group">
-                   <h3 class="widget-title">
-                <a href="<?= $secretaria->secsite ?>" target="_blank" class="" title="Site Oficial <?= trim($secretaria->secnome) ?>.">
-                  <?= $secretaria->secnome?>
-                </a>
-                       </h3>
-                <ol class="widget-list widget-list-single">
-                    <li>
-                        <figure class="event-thumb">
-                            <a href="<?= $secfoto ?>" data-rel="prettyPhoto">
-                                <img src="<?= $secfoto ?>" />
-                                <div class="overlay icon-zoom-in"></div>
-                            </a>
-                        </figure>
-                    </li>
-                </ol>
-                 <ol class="widget-list widget-list-single">
-                    <li>
-                        <figure class="event-thumb">
-                            <a href="<?= $secfotor ?>" data-rel="prettyPhoto">
-                                <img src="<?= $secfotor ?>" />
-                                <div class="overlay icon-zoom-in"></div>
-                            </a>
-                        </figure>
-                    </li>
-                </ol>
-                <ol class="tracklisting tracklisting-top">
-                    <li class="group track">
-                        <a class="fa fa-home"></a>
-                        <h5 class="track-meta">Secretário(a):</h5>
-                        <h4 class="track-title">&nbsp;<?= $secretaria->secusual?></h4>
-                    </li>
-
-                    <li class="group track">
-                        <a class="fa fa-home"></a>
-                        <h5 class="track-meta">Endereço:</h5>
-                        <h4 class="track-title">&nbsp;<?= $secretaria->secendereco ?></h4>
-                    </li>
-
-                    <li class="group track">
-                        <a class="fa fa-home"></a>
-                        <h5 class="track-meta">Fone:</h5>
-                        <h4 class="track-title">&nbsp;<?= $secretaria->secfone ?></h4>
-                    </li>
-
-                    <li class="group track">
-                        <a class="fa fa-home"></a>
-                        <h5 class="track-meta">Email:</h5>
-                        <h4 class="track-meta">&nbsp;<?= $secretaria->secemail ?></h4>
-                    </li>
-                    
-                    <li class="group track">
-                        <a class="fa fa-globe"></a>
-                        <h5 class="track-meta">Site:</h5>
-                        <h4 class="track-meta">
-                        <a href="<?= $secretaria->secsite ?>" target="_blank" class="" title="Site Oficial <?= trim($secretaria->secnome) ?>.">
-                             &nbsp;<?= $secretaria->secsite ?>
-                        </a>
-                        </h4>
-                    </li>
-
-                </ol>
-            </aside><!-- /widget -->
-            <aside class="widget group">
-           
-            </aside>
-        </div>
+     
     </div><!-- /main -->
 </div><!-- /main-wrap -->
 <script>

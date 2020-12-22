@@ -97,43 +97,47 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filter->getValu
                                     <td><i class="icon-rss"></i>&nbsp;<?=$total->soma((new Emissora())->getRowCount())?></td>
                                 </tr>
                                  <tr>
-                                    <th><a title="Apresentadores das EMISSORAS das Cidades Cadastradas no PIAUICult" href="?p=emissora">11-Apresentador(a)</th>
+                                    <th><a title="Apresentadores das EMISSORAS das Cidades Cadastradas no PIAUICult" href="?p=emissora">11-Apresentador(a)</a></th>
                                     <td><i class="icon-microphone"></i>&nbsp;<?=$total->soma((new Apresentador())->getRowCount())?></td>
                                 </tr>
+                                 <tr>
+                                    <th><a title="Programação das EMISSORAS das Cidades Cadastradas no PIAUICult" href="?p=emissora">12-Programação</a></th>
+                                    <td><i class="icon-microphone"></i>&nbsp;<?=$total->soma((new Programacao())->getRowCount())?></td>
+                                </tr>
                                 <tr>
-                                    <th><a title="Listagem de NOTÍCIAS Publicadas de ARTISTAS" href="?p=noticias">12-Notícias</a></th>
+                                    <th><a title="Listagem de NOTÍCIAS Publicadas de ARTISTAS" href="?p=noticias">13-Notícias</a></th>
                                     <td><i class="icon-globe"></i>&nbsp;<?=$total->soma((new Noticia())->getRowCount())?></td>
                                 </tr>
                                  <tr>
-                                     <th><a title="Listagem de EVENTOS Realizadas pelos ARTISTAS"href="?p=events">13-Eventos</a></th>
+                                     <th><a title="Listagem de EVENTOS Realizadas pelos ARTISTAS"href="?p=events">14-Eventos</a></th>
                                     <td><i class="icon-globe"></i>&nbsp;<?=$total->soma((new Evento())->getRowCount())?></td>
                                 </tr>
                                   <tr>
-                                      <th><a title="Cadastro de LOCAIS DE EVENTOS dos 224 Cidades usados pelos ARTISTAS"href="?p=locais">14-Locais de Eventos</a></th>
+                                      <th><a title="Cadastro de LOCAIS DE EVENTOS dos 224 Cidades usados pelos ARTISTAS"href="?p=locais">15-Locais de Eventos</a></th>
                                     <td><i class="icon-home"></i>&nbsp;<?=$total->soma((new EventoLocal())->getRowCount())?></td>
                                 </tr>
                                    <tr>
-                                      <th><a title="Cadastro de 224 CIDADES naturalidade dos ARTISTAS"href="?p=cidades">15-Cidades</a></th>
+                                      <th><a title="Cadastro de 224 CIDADES naturalidade dos ARTISTAS"href="?p=cidades">16-Cidades</a></th>
                                     <td><i class="icon-home"></i><?=$total->soma(sizeof($prefeituraService->getPrefeituras()))?></td>
                                 </tr>
                                 <tr>
-                                    <th><a title="Cadastro de FESTIVAIS CULTURAIS das Cidades" href="?p=festivais">16-Festivais</a></th>
+                                    <th><a title="Cadastro de FESTIVAIS CULTURAIS das Cidades" href="?p=festivais">17-Festivais</a></th>
                                     <td><i class="icon-music"></i>&nbsp;<?=$total->soma((new Festival())->getRowCount())?></td>
                                 </tr>
                                 <tr>
-                                    <th><a title="Cadastro de INTRUMENTOS MUSICAIS dos Artístas" href="?p=instrumentos">17-Instrumentos Musicais</a></th>
+                                    <th><a title="Cadastro de INTRUMENTOS MUSICAIS dos Artístas" href="?p=instrumentos">18-Instrumentos Musicais</a></th>
                                     <td><i class="icon-music "></i>&nbsp;<?=$total->soma((new Instrumento())->getRowCount())?></td>
                                 </tr>
                                 <tr>
-                                    <th><a title="Registros de Humor" href="?p=festivais-humor">18- Humor</a></th>
+                                    <th><a title="Registros de Humor" href="?p=festivais-humor">19- Humor</a></th>
                                     <td><i class="icon-smile"></i>&nbsp;<?=$total->soma((new Humor())->getRowCount())?></td>
                                 </tr>
                                 <tr>
-                                    <th><a title="Registros de Cinema" href="?p=festivais-cinema">19- Cinema</a></th>
+                                    <th><a title="Registros de Cinema" href="?p=festivais-cinema">20- Cinema</a></th>
                                     <td><i class="icon-film "></i>&nbsp;<?=$total->soma((new Cinema())->getRowCount())?></td>
                                 </tr>
                                 <tr>
-                                    <th><a href="?p=links" title="Cadastro de LINKS CULTURAIS das Cidades" >20-Links Culturais</a></th>
+                                    <th><a href="?p=links" title="Cadastro de LINKS CULTURAIS das Cidades" >21-Links Culturais</a></th>
                                     <td><i class="icon-globe"></i>&nbsp;<?=$total->soma((new Links())->getRowCount())?></td>
                                 </tr>
                                 <tr>

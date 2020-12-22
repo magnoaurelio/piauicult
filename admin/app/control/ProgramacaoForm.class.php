@@ -27,13 +27,22 @@ class ProgramacaoForm extends TPage
 
         // create the form fields
         $procodigo = new TEntry('procodigo');
-        $emicodigo = new TDBCombo('emicodigo','conexao','Emissora','emicodigo','eminome','eminome');
+        $pronome    = new TEntry('pronome');
+        $prohorario = new TEntry('prohorario');
         $dataplay = new TDate('dataplay');
-        $apresentador = new TDBCombo('aprcodigo','conexao','Apresentador','aprcodigo','aprnome','aprnome');
+        $emissora    = new TDBCombo('emicodigo','conexao','Emissora','emicodigo','{emicodigo}-{eminome}','eminome');
+        $apresentador = new TDBCombo('aprcodigo','conexao','Apresentador','aprcodigo','{aprcodigo}-{aprnome}','aprnome');
+      //  $emicodigo    = new TDBCombo('emicodigo','conexao','Emissora','emicodigo','{emicodigo}-{eminome}','eminome');
+      //  $aprcodigo    = new TDBCombo('aprcodigo','conexao','Apresentador','aprcodigo','{aprcodigo}-{aprnome}','eminome');
         $detalhe = new THtmlEditor('detalhe');
         
+        if (!empty($procodigo))
+        {
+            $procodigo->setEditable(FALSE);
+        }
+        
         $apresentador->enableSearch();
-        $emicodigo->enableSearch();
+        $emissora->enableSearch();
         
         $dataplay->setMask('dd/mm/yyyy');
         
@@ -47,9 +56,11 @@ class ProgramacaoForm extends TPage
         
         // add the fields
         $this->form->addQuickField('Código', $procodigo,  100 );
-        $this->form->addQuickField('Emissora', $emicodigo,  400 );
-        $this->form->addQuickField('Data', $dataplay,  200 );
-        $this->form->addQuickField('Apresentador', $apresentador,  300 );
+        $this->form->addQuickField('Nome', $pronome,  400 );
+        $this->form->addQuickField('Horário', $prohorario,  200 );
+        $this->form->addQuickField('Emissora', $emissora,  400 );
+        $this->form->addQuickField('Data', $dataplay,  400 );
+        $this->form->addQuickField('Apresentador', $apresentador,  400 );
         $this->form->addQuickField('Detalhe', $detalhe,  '100%' );
         
         

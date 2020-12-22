@@ -28,13 +28,17 @@ class ProgramacaoList extends TPage
         $this->form->setFormTitle('Programacao');
         
         // create the form fields
-        $procodigo = new TEntry('procodigo');
-        $emicodigo = new TDBCombo('emicodigo','conexao','Emissora','emicodigo','eminome','eminome');
+        $procodigo  = new TEntry('procodigo');
+        $pronome    = new TEntry('pronome');
+        $prohorario = new TEntry('prohorario');
+        $emissora    = new TDBCombo('emicodigo','conexao','Emissora','emicodigo','{emicodigo}-{eminome}','eminome');
+        $apresentador = new TDBCombo('aprcodigo','conexao','Apresentador','aprcodigo','{aprcodigo}-{aprnome}','aprnome');
 
 
         // add the fields
         $this->form->addQuickField('Código', $procodigo,  '100%' );
-        $this->form->addQuickField('Emissora', $emicodigo,  '100%' );
+        $this->form->addQuickField('Emissora', $emissora,  '100%' );
+        $this->form->addQuickField('Apresentador', $apresentador,  '100%' );
 
         
         // keep the form filled during navigation with session data
@@ -55,11 +59,27 @@ class ProgramacaoList extends TPage
 
         // creates the datagrid columns
         $column_procodigo = new TDataGridColumn('procodigo', 'Código', 'right');
-        $column_emicodigo = new TDataGridColumn('Emissora->eminome', 'Emissora', 'right');
+        $column_pronome = new TDataGridColumn('pronome', 'Nome', 'left');
+        $column_prohorario = new TDataGridColumn('prohorario', 'Horário', 'left');
+        $column_emissora = new TDataGridColumn('Emissora->eminome', 'Emissora', 'left');
+        $column_emifoto = new TDataGridColumn('Emissora->emifoto', 'Logo', 'left');
         $column_dataplay = new TDataGridColumn('dataplay', 'Data', 'left');
         $column_apresentador = new TDataGridColumn('Apresentador->aprnome', 'Apresentador', 'left');
+        $column_aprfoto = new TDataGridColumn('Apresentador->aprfoto', 'Apresentador', 'left');
         $column_detalhe = new TDataGridColumn('detalhe', 'Detalhes', 'left');
         
+         $column_aprfoto->setTransformer( function($value, $object, $row) {
+          $img  = new TElement('img');
+          $img->src = "files/apresentador/".$value;
+          $img->style = "width:80px; height:80px;";
+            return $img;
+        });
+         $column_emifoto->setTransformer( function($value, $object, $row) {
+          $img  = new TElement('img');
+          $img->src = "files/emissoras/".$value;
+          $img->style = "width:80px; height:80px;";
+            return $img;
+        });
          $column_dataplay->setTransformer( function($value, $object, $row) {
             $date = new DateTime($value);
             return $date->format('d/m/Y');
@@ -67,10 +87,15 @@ class ProgramacaoList extends TPage
 
         // add the columns to the DataGrid
         $this->datagrid->addColumn($column_procodigo);
-        $this->datagrid->addColumn($column_emicodigo);
-        $this->datagrid->addColumn($column_dataplay);
+        $this->datagrid->addColumn($column_emissora);
+        $this->datagrid->addColumn($column_emifoto);
         $this->datagrid->addColumn($column_apresentador);
-        $this->datagrid->addColumn($column_detalhe);
+        $this->datagrid->addColumn($column_aprfoto);
+        $this->datagrid->addColumn($column_pronome);
+        $this->datagrid->addColumn($column_prohorario);
+        $this->datagrid->addColumn($column_dataplay);
+       
+     //   $this->datagrid->addColumn($column_detalhe);
 
         
         // create EDIT action

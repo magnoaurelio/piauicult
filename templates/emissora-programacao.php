@@ -251,7 +251,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                  if($programacao_musica->getResult()) {
                                         foreach ($programacao_musica->getResult() as $programacao_musica){
                                          //   var_dump($programacao);
-                                           // $aprcodigo = $programacao_musica['procodigo'];
+                                        //    $quantidade = $programacao_musica->getResult();
                                             $muscodigo = $programacao_musica['muscodigo'];
                                         
                              ?>
@@ -454,7 +454,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                         ?>
                     </ol>
             
-                
+                </div>
             
                </article>
         </div>

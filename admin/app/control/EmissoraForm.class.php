@@ -44,7 +44,7 @@ class EmissoraForm extends TPage
         $emicontato = new TEntry('emicontato');
         $emiemail = new TEntry('emiemail');
         $emisite = new TEntry('emisite');
-        $emicidade = new TCombo('emicidade');
+        $emicidade = new TDBCombo('emicidade','conexao','Prefeitura','precodigo','{prenome} - {precodigo}','prenome');
         $emiestado = new TEntry('emiestado');
         $emioperador = new TEntry('emioperador');
         $emisobre = new THtmlEditor('emisobre');
@@ -57,7 +57,6 @@ class EmissoraForm extends TPage
         $permite = array('GIF','gif','JPG','PNG','jpg','png','JPEG','jpeg');
         $path = "files/emissoras/";
         
-        $emicidade->addItems(DadosFixos::getPrefeituras());
         $emicidade->enableSearch();
         if(!file_exists($path))
             mkdir($path);

@@ -60,12 +60,13 @@ class ApresentadorList extends TPage
         
 
         // creates the datagrid columns
-        $column_aprcodigo = new TDataGridColumn('aprcodigo', 'Código', 'right');
+        $column_aprcodigo = new TDataGridColumn('aprcodigo', 'Cód', 'right');
    //     $column_apremissora = new TDataGridColumn('apremissora', 'Cidde', 'left');
         $column_aprnome = new TDataGridColumn('aprnome', 'Nome', 'left');
         $column_aprfuncao = new TDataGridColumn('aprfuncao', 'Função', 'left');
         $column_aprfoto = new TDataGridColumn('aprfoto', 'Foto', 'left');
-        $column_apremissora = new TDataGridColumn('Emissora->eminome', 'Emissora', 'right');
+        $column_apremissora = new TDataGridColumn('Emissora->eminome', 'Emissora', 'left');
+        $column_emifoto = new TDataGridColumn('Emissora->emifoto', 'Logo', 'left');
         $column_aprcontato = new TDataGridColumn('aprcontato', 'Contato', 'left');
         $column_apremail = new TDataGridColumn('apremail', 'Email', 'left');
         
@@ -76,15 +77,20 @@ class ApresentadorList extends TPage
           $img->style = "width:80px; height:80px;";
             return $img;
         });
-
+         $column_emifoto->setTransformer( function($value, $object, $row) {
+          $img  = new TElement('img');
+          $img->src = "files/emissoras/".$value;
+          $img->style = "width:80px; height:80px;";
+            return $img;
+        });
 
         // add the columns to the DataGrid
         $this->datagrid->addColumn($column_aprcodigo);
         $this->datagrid->addColumn($column_apremissora);
+        $this->datagrid->addColumn($column_emifoto);
         $this->datagrid->addColumn($column_aprnome);
-        $this->datagrid->addColumn($column_aprfuncao);
         $this->datagrid->addColumn($column_aprfoto);
-    
+        $this->datagrid->addColumn($column_aprfuncao);
         $this->datagrid->addColumn($column_aprcontato);
         $this->datagrid->addColumn($column_apremail);
 
