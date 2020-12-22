@@ -46,7 +46,8 @@ class ArtistaForm extends TPage
         $artcep = new TEntry('artcep');
         $artuf = new TEntry('artuf');
         $artcidade = new TEntry('artcidade');
-        $artvinculo = new \Adianti\Widget\Form\TCombo('artvinculo');
+      //  $artvinculo = new \Adianti\Widget\Form\TCombo('artvinculo');
+        $artvinculo = new TDBCombo('artvinculo','conexao','Prefeitura','precodigo','{prenome} - {precodigo}','prenome');
         $artcomplemento = new TEntry('artcomplemento');
         $artsexo = new TCombo('artsexo');
         $artfone = new TEntry('artfone');
@@ -67,7 +68,7 @@ class ArtistaForm extends TPage
         $artwhatsapp = new TEntry('artwhatsapp');
         
         $artsound->onblur = "BuscaID(this.value,this.id)";
-        $artvinculo->addItems(DadosFixos::getPrefeituras());
+    //    $artvinculo->addItems(DadosFixos::getPrefeituras());
         $artvinculo->enableSearch();
         
         $arttipocodigo->enableSearch();

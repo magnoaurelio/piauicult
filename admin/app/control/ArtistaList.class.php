@@ -32,8 +32,9 @@ class ArtistaList extends TPage
         // $artcodigo = new TEntry('artcodigo');
         $artnome = new TDBCombo('artcodigo','conexao','Artista','artcodigo','{artusual} - {artcodigo}','artusual');
        // $artnome = new TEntry('artnome');
-        $cidade = new \Adianti\Widget\Form\TCombo('cidade');
-        $cidade->addItems(DadosFixos::getPrefeituras());
+        $cidade = new TDBCombo('cidade','conexao','Prefeitura','precodigo','{prenome} - {precodigo}','prenome');
+      //  $cidade = new \Adianti\Widget\Form\TCombo('cidade');
+    //    $cidade->addItems(DadosFixos::getPrefeituras());
 
         $artnome->enableSearch();
         $cidade->enableSearch();

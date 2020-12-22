@@ -205,13 +205,13 @@ class PrefeituraList extends TPage
         $this->datagrid->addColumn($column_prenome);
         $this->datagrid->addColumn($column_prenomep);
         $this->datagrid->addColumn($column_prenomeu);
-        $this->datagrid->addColumn($column_predata);
+    //    $this->datagrid->addColumn($column_predata);
         $this->datagrid->addColumn($column_prefoto);
      //   $this->datagrid->addColumn($column_precep);
      //   $this->datagrid->addColumn($column_prebairro);
      //   $this->datagrid->addColumn($column_precnpj);
         $this->datagrid->addColumn($column_preimagem);
-        $this->datagrid->addColumn($column_prelogo);
+     //   $this->datagrid->addColumn($column_prelogo);
         $this->datagrid->addColumn($column_prebrasao);
         $this->datagrid->addColumn($column_prebandeira);
      //   $this->datagrid->addColumn($column_preddd);

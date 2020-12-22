@@ -111,8 +111,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                 <header class="entry-top special-top">
                     <a href="?p=emissora&id=<?=$_GET['id']?>">
                     <h4 class="entry-title page-title" style="text-align: center">
-                     <?= $prefeitura->prenome ?>&nbsp;<span style="color:#000;font-size: 22;"> (Artistas)</span>
-                    
+                     <?= $prefeitura->prenome ?>&nbsp;<span style="color:#000;font-size: 22;"> (Artistas)</span><br>
                     <img style="float: left; margin-top: -28px;" src="<?=$brasao; ?>" width="80" alt="" /> &nbsp; 
                     <img style="float: right; margin-top: -15px;" src="<?=$bandeira ?>" width="80" alt="" />
                     </h4>
@@ -190,6 +189,16 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                 <img src="<?= $imgp ?>" />
                                 <div class="overlay icon-zoom-in"></div>								
                             </a>
+                               <ol class="tracklisting tracklisting-top">
+                                <li class="group track">
+                                    <a class="fa fa-home"></a>
+                                    <h5 class="track-meta">Site:</h5>
+                                    <h4 class="track-title"><a style="font-size: 12px; font-weight: 0" target="_blank" href="http://<?= $prefeitura->presite ?>">
+                                    <?= $prefeitura->presite ?>
+                                    </a>
+                                    </h4>
+                                </li>
+                               </ol>
                         </figure>
                     </li>
                     <li>
