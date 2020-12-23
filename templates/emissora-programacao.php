@@ -1,4 +1,5 @@
 <?php
+  $tempo = 0;
 $api = new Api();
 $precodigo =  $_GET['precodigo'];
 $filterAmpar = new Filter("precodigo","=", intval($precodigo));
@@ -56,9 +57,12 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
     <div id="main" class="row">
         <div class="large-12 columns">
             <article class="post group">
+               <div class="large-12 columns">
+            <article class="post group">
+               
+              <div class="large-8 columns">
                 <?php
                 $emissora = new Emissora($_GET['emicodigo']);
-              
                 $imgfoto = "admin/files/emissoras/" . trim($emissora->emifoto);
                 $imgimagem = "admin/files/emissoras/" . trim($emissora->emiimagem);
 
@@ -69,11 +73,11 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                     $imgimagem = 'admin/files/imagem/galeria.png';
                 endif;
                 ?>
-                <header class="entry-top special-top">
+            
                      <?php
                         $precodigo = $_GET['precodigo'];
                         $prefeitura = new Read();
-                        $prefeitura->ExeRead("prefeitura", "WHERE precodigo = $precodigo  ORDER BY precodigo limit 1 ");
+                        $prefeitura->ExeRead("prefeitura", "WHERE precodigo = $precodigo  ");
                          foreach($prefeitura->getResult() as $prefeitura){
                             $prenome = $prefeitura['prenome'];
                          }
@@ -82,42 +86,32 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                         <a href="?p=emissora&precodigo=<?= $precodigo?>" title="Voltar para página de EMISSORAS "> 
                             <!--img style="float: left;" src="<?=$brasao ?>" width="60" height="60" alt="" /> &nbsp; 
                         <img style="float: left;" src="<?=$bandeira ?>" width="80" height="60" alt="" /-->
-                        <?= $prenome?>&nbsp;&nbsp;&nbsp;&nbsp; <!--i class="icon-reply"></i-->
+                        <?= $prenome?>&nbsp;&nbsp;&nbsp;&nbsp; 
                         </a>
-                    </h1>
-                    <h2 class="entry-title page-title"> 
-                        <img src="<?= $imgfoto ?>" width="80" height="80"  /> 
-                        
-                        <a href="<?=$emissora->emisite?>" target="_blanck" title="Veja o SITE da <?=$emissora->eminome?>">
-                                <?= $emissora->eminome ?>&nbsp;-  Programações
-                        </a>
-                        
-                        <?php if ($emissora->emivivo <> '') { ?>
-                         <a href="<?=$emissora->emivivo?>" target="_blanck" title="Ouça Ao Vivo <?=$emissora->eminome?>">
+                         <?php if ($emissora->emivivo <> '') { ?>
+                        <a href="?p=emissora&precodigo=<?= $precodigo?>" title="Voltar para página de EMISSORAS "> 
                              <img src="images/FONE DE OUVIDO0.png" width="80" height="80"  />
                           </a>
                          <?php }else{ ?>   
-                             <a href="<?=$emissora->emisite?>" target="_blanck" title="Veja o SITE da: <?=$emissora->eminome?>">
+                        <a href="?p=emissora&precodigo=<?= $precodigo?>" title="Voltar para página de EMISSORAS "> 
                              <img src="images/FONE DE OUVIDO0.png" width="80" height="80"  />
                           </a>
                         <?php } ?>
+                    </h1>
+                    <h2 class="entry-title page-title"> 
+                        <img src="<?= $imgfoto ?>" width="120" height="120"  /> 
+                        <a href="<?=$emissora->emisite?>" target="_blanck" title="Veja o SITE da <?=$emissora->eminome?>">
+                                <?= $emissora->eminome ?>&nbsp;
+                        </a>
                     </h2>
-                </header>
-                 <!--h4>
-                     &nbsp;
-                       <a href="<?=$emissora->emisite?>" target="_blanck" title="Veja o SITE da <?=$emissora->eminome?>">
-                           &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#000;font-size: 22;">
-                           Profissionais</span> 
-                       </a>
-                   </h4-->
-                <?php
+                </div>
+           
+                      <?php
                 $apremissora = $_GET['emicodigo'];
                 $aprcodigo = $_GET['aprcodigo'];
                 $apresentador = new Read();
-                $apresentador->ExeRead("apresentador", "WHERE apremissora = $apremissora and aprcodigo = $aprcodigo ORDER BY rand() limit 10");
+                $apresentador->ExeRead("apresentador", "WHERE apremissora = $apremissora and aprcodigo = $aprcodigo ");
                 ?>
-               
-                 <article class="post group">
                   
                  <?php 
                     foreach($apresentador->getResult() as $apresentador):
@@ -128,15 +122,14 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                             $aprfoto = 'admin/files/imagem/user.png';
                             endif;
                     ?>
-                    
-                    <!--div class="large-4 columns sidebar sidebar-1">
-                       <aside class="widget group" style="margin-bottom: 0px;">
+                    <div class="large-4 columns sidebar sidebar-1">
+                       <aside class="widget group">
                            <ol class="widget-list widget-list-single" >
-                            <li style="max-height: 300px; min-height: 300px; margin-bottom:0px;">
+                            <li style="max-height: 250px; min-height: 250px; margin-bottom:0px; float: right;">
                                 <figure class="event-thumb">
                                     <a  href="<?=$emissora->emisite?>" target="_blanck" title="Acesse o SITE da: <?=$emissora->eminome?> e Veja: <?=$apresentador['aprnome']?>">
                                     <img src="<?=$aprfoto?>" width="250" height="250" alt="" />
-                                    <div class="overlay icon-info-sign"></div>
+                                    <!--div class="overlay icon-info-sign"></div-->
                                     </a>
                                 </figure>
                                 <h4 class="list-title"><a href="<?=$emissora->emisite?>" target="_blanck" title="Acesse o SITE da <?=$emissora->eminome?>"><?= $apresentador['aprnome']?></a></h4>
@@ -145,22 +138,22 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                   
                      </ol>
                     </aside>
-                 </div--> 
+                 </div> 
                  <?php  endforeach; ?>
-                 </article> 
+                     
+                 </article>
+             </div> 
                    
             <div class="entry-content">
                <ol class="tracklisting">
                           <table width="100%" border="0" style="margin-left: 0px;">
-                            
-                            <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Programação</a></th>
-                            <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Data</a></th>
-                            <th width="100"><a href="#"><i class="icon-microphone"></i> &nbsp;Apresentador</a></th>
-                            <th width="100"><a href="#"><i class="icon-picture"></i> &nbsp;Foto</a></th>
-                            <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Programa</a></th>
-                            <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Horário</a></th>
-                            <th width="100"><a href="#"><i class="icon-music"></i> &nbsp;Músicas</a></th>
-                            
+                            <th width="100"><i class="icon-pencil"></i> &nbsp;Programação</th>
+                            <th width="100"><i class="icon-pencil"></i> &nbsp;Data</th>
+                            <th width="100"><i class="icon-microphone"></i> &nbsp;Apresentador</th>
+                            <th width="100"><i class="icon-picture"></i> &nbsp;Foto</th>
+                            <th width="100"><i class="icon-pencil"></i> &nbsp;Programa</th>
+                            <th width="100"><i class="icon-pencil"></i> &nbsp;Horário</th>
+                            <th width="100"><i class="icon-music"></i> &nbsp;Músicas</th>
                            </table>
                         <?php
                          $procodigo = $_GET['procodigo'];
@@ -312,6 +305,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                     <tr>
                                       <?php
                                               //  $muscodigo = $programacao_musica['muscodigo'];;
+                                              
                                                 $musica = new Read();
                                                 $musica->ExeRead("musica", "WHERE muscodigo = $muscodigo ");
                                                 foreach($musica->getResult() as $musica){
@@ -389,7 +383,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                                    <?php else: ?>
                                                     <a data-rel="prettyPhoto"   onclick="Topo()" class="action-btn" style="background-color:#CCC;">Vídeo</a>
                                                    <?php endif; ?>
-                                             <a href="#" id="" class=""> 
+                                                <a href="#" id="" class=""> 
                                                  <h4 class="track-title"><?= $musnome ?></h4><br>
                                                  <h6 class="track-title"><a href="#"><i class="icon-time"></i> Duração:&nbsp;&nbsp; </a><?= $musduracao ?></h6>
                                                  <h6 class="track-title"><a href="#"><i class="icon-microphone"></i> + Tocadas:&nbsp;&nbsp;</a><?= $mustocada ?></h6>
@@ -492,7 +486,16 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                             </a>
                                         </td>
                                      
-                                        <?php } ?>  
+                                        <?php 
+                                         $minuto  = intval(substr($musduracao,0,2));
+                                         $segundo = intval(substr($musduracao,4,2));
+                                    //     $segundo = fixHour($segundo);
+                                         $tempo = $minuto+$segundo;
+                                         $tempo++;// = $tempo + ceil($soma);
+                                         $minuto=0;
+                                         $segundo=0;
+                                        } 
+                                        ?>  
                                     </tr>
                                 </table>
                             </li> 
@@ -509,7 +512,36 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
             
                </article>
         </div>
-     
+          <?php
+        //   $minutoTocados   = fixHour($minuto); // 11:40h
+        //   $sesgundoTocados = fixHour($segundo); // 25 minutos
+          $total = fixHour($tempo);
+
+         //  echo $total; // Saída: 12.05
+
+           function fixHour($num)
+           {
+               $decimal = $num - floor($num); // A função floor arredonda o número para o próximo menor valor inteiro
+
+               if ($decimal >= 0.60) {
+                   $num = ($num + 1) - 0.60;
+                   return fixHour($num); // Recursão
+               }
+               return $num;
+           }
+         ?>
+           <div class="large-12 columns sidebar sidebar-1">
+                <aside class="widget group">
+                    <ol class="widget-list widget-list-single" >
+                     <li>
+                         <h4 class="track-title"><a href="#">
+                             <i class="icon-time"></i>  Duração Total: </a>
+                             &nbsp;&nbsp;<?=$total?> minutos
+                         </h4>
+                     </li>
+                   </ol>
+             </aside>
+          </div> 
     </div><!-- /main -->
 </div><!-- /main-wrap -->
 <script>

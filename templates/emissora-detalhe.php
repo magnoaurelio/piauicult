@@ -186,13 +186,13 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                             <table width="100%" border="0" style="margin-left: 0px;">
                                     <tr>
                                         <td width="100">
-                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
+                                            <a href="?p=emissora-programacao-apresentador&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
                                               <img src="images/piauicult.jpg" width="70" alt="" />
                                               PIUAICult
                                             </a> 
                                         </td>
                                         <td  width="100">
-                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="">
+                                             <a href="?p=emissora-programacao-apresentador&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="">
                                                 <h4 class="track-title"><?= DataCalendario::date2br($programacao['dataplay']) ?></h4>
                                              </a> 
                                         </td>
@@ -211,24 +211,24 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                                         endif;
                         
                                                ?>
-                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class=""> 
+                                             <a href="?p=emissora-programacao-apresentador&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class=""> 
                                                 <h4 class="track-title"><?= $aprnome ?></h4>
                                              </a> 
                                              <?php } ?>
                                         </td>
                                           <td width="100" style="padding-left: 0px;">
-                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
+                                            <a href="?p=emissora-programacao-apresentador&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
                                             <img src="<?=$aprfoto?>" width="70" height="70" alt="" />
                                             </a> 
                             
                                         </td>
                                          <td  width="100">
-                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
+                                            <a href="?p=emissora-programacao-apresentador&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
                                             <img src="images/FONE DE OUVIDO0.png" width="70" alt="" />
                                             </a>
                                         </td>
                                          <td  width="100">
-                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
+                                            <a href="?p=emissora-programacao-apresentador&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
                                               <img src="images/FONE DE OUVIDO0.png" width="70" alt="" />
                                             </a>
                                         </td>

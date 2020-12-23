@@ -55,9 +55,8 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
 <div id="main-wrap">
     <div id="main" class="row">
         <div class="large-12 columns">
-          
             <article class="post group">
-                  <div class="large-8 columns">
+              <div class="large-8 columns">
                 <?php
                 $emissora = new Emissora($_GET['emicodigo']);
                 $imgfoto = "admin/files/emissoras/" . trim($emissora->emifoto);
@@ -87,7 +86,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                         </a>
                     </h1>
                     <h2 class="entry-title page-title"> 
-                        <img src="<?= $imgfoto ?>" width="80" height="80"  /> 
+                        <img src="<?= $imgfoto ?>" width="100" height="100"  /> 
                         
                         <a href="<?=$emissora->emisite?>" target="_blanck" title="Veja o SITE da <?=$emissora->eminome?>">
                                 <?= $emissora->eminome ?>&nbsp;-  Programações
@@ -111,7 +110,6 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                 $apresentador = new Read();
                 $apresentador->ExeRead("apresentador", "WHERE apremissora = $apremissora and aprcodigo = $aprcodigo ");
                 ?>
-                <div class="large-4 columns"></div>
                   
                  <?php 
                     foreach($apresentador->getResult() as $apresentador):
@@ -141,7 +139,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                  </div> 
                  <?php  endforeach; ?>
                  </article>
-                  </div> 
+        </div> 
                 
                  <!--h4>
                      &nbsp;
@@ -155,14 +153,13 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                  <div class="entry-content">
                <ol class="tracklisting">
                           <table width="100%" border="0" style="margin-left: 0px;">
-                            <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Programação</a></th>
-                            <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Data</a></th>
-                            <th width="100"><a href="#"><i class="icon-microphone"></i> &nbsp;Apresentador</a></th>
-                            <th width="100"><a href="#"><i class="icon-picture"></i> &nbsp;Foto</a></th>
-                            <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Programa</a></th>
-                            <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Horário</a></th>
-                            <th width="100"><a href="#"><i class="icon-music"></i> &nbsp;Músicas</a></th>
-                            
+                            <th width="100"><i class="icon-pencil"></i> &nbsp;Programação</th>
+                            <th width="100"><i class="icon-pencil"></i> &nbsp;Data</th>
+                            <th width="100"><i class="icon-microphone"></i> &nbsp;Apresentador</th>
+                            <th width="100"><i class="icon-picture"></i> &nbsp;Foto</th>
+                            <th width="100">><i class="icon-pencil"></i> &nbsp;Programa</th>
+                            <th width="100"><i class="icon-pencil"></i> &nbsp;Horário</th>
+                            <th width="100"><i class="icon-music"></i> &nbsp;Músicas</th>
                            </table>
                         <?php
                          $emicodigo = $_GET['emicodigo'];
