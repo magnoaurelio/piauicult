@@ -55,7 +55,9 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
 <div id="main-wrap">
     <div id="main" class="row">
         <div class="large-12 columns">
+          
             <article class="post group">
+                  <div class="large-8 columns">
                 <?php
                 $emissora = new Emissora($_GET['emicodigo']);
                 $imgfoto = "admin/files/emissoras/" . trim($emissora->emifoto);
@@ -68,11 +70,11 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                     $imgimagem = 'admin/files/imagem/galeria.png';
                 endif;
                 ?>
-                <header class="entry-top special-top">
+            
                      <?php
                         $precodigo = $_GET['precodigo'];
                         $prefeitura = new Read();
-                        $prefeitura->ExeRead("prefeitura", "WHERE precodigo = $precodigo  ORDER BY precodigo limit 1 ");
+                        $prefeitura->ExeRead("prefeitura", "WHERE precodigo = $precodigo  ");
                          foreach($prefeitura->getResult() as $prefeitura){
                             $prenome = $prefeitura['prenome'];
                          }
@@ -101,22 +103,15 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                           </a>
                         <?php } ?>
                     </h2>
-                </header>
-                 <!--h4>
-                     &nbsp;
-                       <a href="<?=$emissora->emisite?>" target="_blanck" title="Veja o SITE da <?=$emissora->eminome?>">
-                           &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#000;font-size: 22;">
-                           Profissionais</span> 
-                       </a>
-                   </h4-->
-                <?php
+                </div>
+           
+                      <?php
                 $apremissora = $_GET['emicodigo'];
                 $aprcodigo = $_GET['aprcodigo'];
                 $apresentador = new Read();
-                $apresentador->ExeRead("apresentador", "WHERE apremissora = $apremissora and aprcodigo = $aprcodigo ORDER BY rand() limit 10");
+                $apresentador->ExeRead("apresentador", "WHERE apremissora = $apremissora and aprcodigo = $aprcodigo ");
                 ?>
-               
-                 <article class="post group">
+                <div class="large-4 columns"></div>
                   
                  <?php 
                     foreach($apresentador->getResult() as $apresentador):
@@ -127,15 +122,14 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                             $aprfoto = 'admin/files/imagem/user.png';
                             endif;
                     ?>
-                    
-                    <!--div class="large-4 columns sidebar sidebar-1">
-                       <aside class="widget group" style="margin-bottom: 0px;">
+                    <div class="large-4 columns sidebar sidebar-1">
+                       <aside class="widget group">
                            <ol class="widget-list widget-list-single" >
-                            <li style="max-height: 300px; min-height: 300px; margin-bottom:0px;">
+                            <li style="max-height: 250px; min-height: 250px; margin-bottom:0px;">
                                 <figure class="event-thumb">
                                     <a  href="<?=$emissora->emisite?>" target="_blanck" title="Acesse o SITE da: <?=$emissora->eminome?> e Veja: <?=$apresentador['aprnome']?>">
                                     <img src="<?=$aprfoto?>" width="250" height="250" alt="" />
-                                    <div class="overlay icon-info-sign"></div>
+                                    <!--div class="overlay icon-info-sign"></div-->
                                     </a>
                                 </figure>
                                 <h4 class="list-title"><a href="<?=$emissora->emisite?>" target="_blanck" title="Acesse o SITE da <?=$emissora->eminome?>"><?= $apresentador['aprnome']?></a></h4>
@@ -144,13 +138,23 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                   
                      </ol>
                     </aside>
-                 </div--> 
+                 </div> 
                  <?php  endforeach; ?>
-                 </article> 
-           <div class="entry-content">
+                 </article>
+                  </div> 
+                
+                 <!--h4>
+                     &nbsp;
+                       <a href="<?=$emissora->emisite?>" target="_blanck" title="Veja o SITE da <?=$emissora->eminome?>">
+                           &nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#000;font-size: 22;">
+                           Profissionais</span> 
+                       </a>
+                   </h4-->
+             <article class="post group">
+                 <div class="large-12 columns"> 
+                 <div class="entry-content">
                <ol class="tracklisting">
                           <table width="100%" border="0" style="margin-left: 0px;">
-                            
                             <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Programação</a></th>
                             <th width="100"><a href="#"><i class="icon-pencil"></i> &nbsp;Data</a></th>
                             <th width="100"><a href="#"><i class="icon-microphone"></i> &nbsp;Apresentador</a></th>
@@ -161,10 +165,10 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                             
                            </table>
                         <?php
-                         $mus_qte = 0;
-                         $mus_tempo = 0;
+                         $emicodigo = $_GET['emicodigo'];
+                         $procodigo = $_GET['emicodigo'];
                          $programacoes =  new Read();
-                         $programacoes->ExeRead("programacao","WHERE emicodigo = :cod", "cod={$emissora->emicodigo}");
+                         $programacoes->ExeRead("programacao","WHERE emicodigo = $emicodigo ");
                          if($programacoes->getResult()) {
                              foreach ($programacoes->getResult() as $programacao){
                               //   var_dump($programacao);
@@ -178,8 +182,10 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                     <tr>
                                         <td width="100">
                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>&procodigo=<?= $procodigo ?>" id="" class="search-btn">
-                                              <img src="images/piauicult.jpg" width="120" alt="" />
-                                              PIUAICult
+                                              <img src="images/piauicult.jpg" width="100" alt="" />
+                                              <h4 class="track-title">
+                                              PIUAICult - <?= $procodigo ?>
+                                              </h4>
                                             </a> 
                                         </td>
                                          <td  width="100">
@@ -191,7 +197,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                              <?php
                                                 $aprcodigo = $programacao['aprcodigo'];
                                                 $apresentador = new Read();
-                                                $apresentador->ExeRead("apresentador", "WHERE aprcodigo = $aprcodigo ORDER BY rand() limit 1");
+                                                $apresentador->ExeRead("apresentador", "WHERE aprcodigo = $aprcodigo ");
                                                 foreach($apresentador->getResult() as $apresentador){
                                                         $aprnome = $apresentador['aprnome'];
                                                         $aprfoto = "admin/files/apresentador/" . trim($apresentador['aprfoto']);
@@ -210,17 +216,6 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                             <img src="<?=$aprfoto?>" width="120" height="120" alt="" />
                                             </a> 
                                         </td>
-                                       <?php
-                                     //   $aprcodigo = $programacao['aprcodigo'];;
-                                        $aprcodigo = $programacao['aprcodigo'];
-                                        $programacao = new Read();
-                                        $programacao->ExeRead("programacao", "WHERE aprcodigo = $aprcodigo ORDER BY rand() limit 1");
-                                                foreach($programacao->getResult() as $programacao){
-                                                $procodigo = $programacao['procodigo'];
-                                                $aprcodigo = $programacao['aprcodigo'];
-                                                $pronome = $programacao['pronome'];
-                                                $prohorario = $programacao['prohorario'];
-                                        ?>
                                       
                                          <td  width="100">
                                             <h4 class="track-title">
@@ -236,7 +231,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                             </a>
                                             </h4>
                                         </td>
-                                            <?php } ?>
+                                        
                                         <?php
                                         $mus_tempo = 0;
                                         $mus_qte   = 0;
@@ -274,8 +269,8 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                         ?>
                     </ol>
            </div>
-               
-         </article>
+                 </div>
+              </article>
         </div>
      
     </div><!-- /main -->

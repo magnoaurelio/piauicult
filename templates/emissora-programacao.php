@@ -148,9 +148,8 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                  </div--> 
                  <?php  endforeach; ?>
                  </article> 
-           <div class="entry-content">
                    
-                  <div class="entry-content">
+            <div class="entry-content">
                <ol class="tracklisting">
                           <table width="100%" border="0" style="margin-left: 0px;">
                             
@@ -164,9 +163,9 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                             
                            </table>
                         <?php
-                          // $emissora = new Emissora($_GET['emicodigo']);
+                         $procodigo = $_GET['procodigo'];
                          $programacoes =  new Read();
-                         $programacoes->ExeRead("programacao","WHERE emicodigo = :cod", "cod={$emissora->emicodigo}");
+                         $programacoes->ExeRead("programacao","WHERE procodigo = $procodigo");
                          if($programacoes->getResult()) {
                              foreach ($programacoes->getResult() as $programacao){
                               //   var_dump($programacao);
@@ -180,7 +179,9 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                         <td width="100">
                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
                                               <img src="images/piauicult.jpg" width="120" alt="" />
-                                              PIUAICult
+                                              <h4 class="track-title">
+                                              PIUAICult - <?= $procodigo ?>
+                                              </h4>
                                             </a> 
                                         </td>
                                          <td  width="100">
@@ -290,7 +291,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                           </table>
                         <?php
                          $programacoes =  new Read();
-                         $programacoes->ExeRead("programacao","WHERE emicodigo = :cod", "cod={$emissora->emicodigo}");
+                         $programacoes->ExeRead("programacao","WHERE procodigo = $procodigo");
                          if($programacoes->getResult()) {
                              foreach ($programacoes->getResult() as $programacao){
                               //   var_dump($programacao);
