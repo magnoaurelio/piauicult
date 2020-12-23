@@ -487,11 +487,13 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                         </td>
                                      
                                         <?php 
+                                      //     $minuto  = fixHour($musduracao);
                                          $minuto  = intval(substr($musduracao,0,2));
-                                         $segundo = intval(substr($musduracao,4,2));
-                                    //     $segundo = fixHour($segundo);
-                                         $tempo = $minuto+$segundo;
-                                         $tempo++;// = $tempo + ceil($soma);
+                                         $segundo = substr($musduracao,3,2);
+                                         $juntos = $minuto.".".$segundo;
+                                    //     var_dump($juntos);
+                                         $soma = fixHour($juntos);
+                                         $tempo = fixHour($tempo + $soma);
                                          $minuto=0;
                                          $segundo=0;
                                         } 
@@ -513,22 +515,18 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                </article>
         </div>
           <?php
-        //   $minutoTocados   = fixHour($minuto); // 11:40h
-        //   $sesgundoTocados = fixHour($segundo); // 25 minutos
-          $total = fixHour($tempo);
+            function fixHour($num)
+            {
+                $decimal = $num - floor($num); // A função floor arredonda o número para o próximo menor valor inteiro
 
-         //  echo $total; // Saída: 12.05
+                if ($decimal >= 0.60) {
+                    $num = ($num + 1) - 0.60;
+                    return fixHour($num); // Recursão
+                }
 
-           function fixHour($num)
-           {
-               $decimal = $num - floor($num); // A função floor arredonda o número para o próximo menor valor inteiro
-
-               if ($decimal >= 0.60) {
-                   $num = ($num + 1) - 0.60;
-                   return fixHour($num); // Recursão
-               }
-               return $num;
-           }
+                return $num;
+            }
+     
          ?>
            <div class="large-12 columns sidebar sidebar-1">
                 <aside class="widget group">
@@ -536,7 +534,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                      <li>
                          <h4 class="track-title"><a href="#">
                              <i class="icon-time"></i>  Duração Total: </a>
-                             &nbsp;&nbsp;<?=$total?> minutos
+                             &nbsp;&nbsp;<?=$tempo?> minutos
                          </h4>
                      </li>
                    </ol>
