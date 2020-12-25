@@ -74,6 +74,7 @@
                                 <ul id="navigation" class="submenu">
                                     <li class="current-menu-item"><a title="Listagem das MÚSICAS Alfabética" href="?p=musicas">Músicas de A-Z</a></li>
                                     <li class="current-menu-item"><a title="Listagem das MÚSICAS de Cada Artista" href="?p=artista-musicas">Artistas & Músicas</a></li>
+                                    <li class="current-menu-item"><a title="Listagem de GÊNERO MUSICAL das MÚSICAS de Cada Artista" href="?p=artista-genero">Músicas & Gênero </a></li>
                                     <li class="current-menu-item"><a title="Listagem dos VÍDEOS realizados sobre os ARTISTAS" href="?p=videos">Vídeos de Músicas</a></li>
                                 </ul>
                             </li>

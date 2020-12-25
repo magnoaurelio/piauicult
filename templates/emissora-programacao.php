@@ -147,13 +147,13 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
             <div class="entry-content">
                <ol class="tracklisting">
                           <table width="100%" border="0" style="margin-left: 0px;">
-                            <th width="100"><i class="icon-pencil"></i> &nbsp;Programação</th>
-                            <th width="100"><i class="icon-pencil"></i> &nbsp;Data</th>
-                            <th width="100"><i class="icon-microphone"></i> &nbsp;Apresentador</th>
-                            <th width="100"><i class="icon-picture"></i> &nbsp;Foto</th>
-                            <th width="100"><i class="icon-pencil"></i> &nbsp;Programa</th>
-                            <th width="100"><i class="icon-pencil"></i> &nbsp;Horário</th>
-                            <th width="100"><i class="icon-music"></i> &nbsp;Músicas</th>
+                            <th width="100"><i class="icon-pencil"></i><a href="#">&nbsp;Programação</a> </th>
+                            <th width="100"><i class="icon-calendar"></i><a href="#"> &nbsp;Data</a></th>
+                            <th width="100"><i class="icon-microphone"></i><a href="#"> &nbsp;Apresentador</a></th>
+                            <th width="100"><i class="icon-picture"></i><a href="#"> &nbsp;Foto</a></th>
+                            <th width="100"><i class="icon-rss"></i><a href="#"> &nbsp;Programa</a></th>
+                            <th width="100"><i class="icon-time"></i><a href="#"> &nbsp;Horário</a></th>
+                            <th width="100"><i class="icon-music"></i><a href="#"> &nbsp;Músicas</a></th>
                            </table>
                         <?php
                          $procodigo = $_GET['procodigo'];
@@ -274,13 +274,13 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                     <h4 class="track-title">Repertório Programado <a href="#"><i class="icon-calendar"></i> &nbsp;Data:</a> <?= DataCalendario::date2br($programacao['dataplay']) ?></h4>
 
                     <ol class="tracklisting">
-                          <table width="100%" border="0" style="margin-left: 0px;">
+                          <table width="100%" border="0" style="background-color:#C9C9C9;">
                             <th width="10"><a href="#"><i class="icon-play"></i></a></th>
-                            <th width="240" style="text-align: left;"><a href="#"><i class="icon-music"></i> &nbsp;Música</a></th>
-                            <th width="100" style="text-align: left;"><a href="#"><i class="icon-bullseye"></i> &nbsp;Disco</a></th>
-                            <th width="100" style="text-align: left;"><a href="#"><i class="icon-pencil"></i> &nbsp;Autor(es)</a></th>
-                            <th width="100" style="text-align: left;"><a href="#"><i class="icon-microphone"></i> &nbsp;Intérprete(s)</a></th>
-                            <th width="100" style="text-align: left;"><a href="#"><i class="icon-music"></i> &nbsp;Arranjador(es)</a></th>
+                            <th width="240" style="text-align: left;"><i class="icon-music"></i><a href="#"> &nbsp;Música</a></th>
+                            <th width="100" style="text-align: left;"><i class="icon-bullseye"></i> &nbsp;<a href="#">Disco</a></th>
+                            <th width="100" style="text-align: left;"><i class="icon-pencil"></i><a href="#"> &nbsp;Autor(es)</a></th>
+                            <th width="100" style="text-align: left;"><i class="icon-microphone"></i><a href="#"> &nbsp;Intérprete(s)</a></th>
+                            <th width="100" style="text-align: left;"><i class="icon-music"></i><a href="#"> &nbsp;Arranjador(es)</a></th>
                           </table>
                         <?php
                          $programacoes =  new Read();
@@ -378,7 +378,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                                    <?php //endif; ?>
                                                     <?php if ($musica['vidativo'] == "S"): ?>
                                                       <a title="Veja o VÍDEO desta MUSICA" href="<?= $musica['musvideo'] ?>" data-rel="prettyPhoto"   onclick="Topo()" class="action-btn">
-                                                          <img src="/images/icone/video.fw.png" width="15">&nbsp;Vídeo
+                                                          <img src="/images/icone/video1.fw.png" width="15">&nbsp;Vídeo
                                                       </a>&nbsp;
                                                    <?php else: ?>
                                                     <a data-rel="prettyPhoto"   onclick="Topo()" class="action-btn" style="background-color:#CCC;">Vídeo</a>
@@ -508,6 +508,20 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                           }
                         }
                         ?>
+                         <script>
+                            var musica_tocando = null;
+                            player_tocando = true
+                            $('.media-btn').click(function (e) {
+                                if (musica_tocando === e.target.id && player_tocando === false) {
+                                    player.play(player.index)
+                                    player_tocando = true
+                                } else {
+                                    player.pause()
+                                    player_tocando = false
+                                    musica_tocando = e.target.id
+                                }
+                            })
+                        </script>
                     </ol>
             
                 </div>

@@ -92,22 +92,23 @@ class ArtistaForm extends TPage
         // add the fields
         $this->form->addQuickField('Código', $artcodigo,  100 );
         $this->form->addQuickField('Nome', $artnome,  400 );
-        $this->form->addQuickField('Usual', $artusual,  200 );
+        $this->form->addQuickField('Usual', $artusual,  300 );
         $this->form->addQuickField('Tipo de Artista', $arttipocodigo,  300 );
-        $this->form->addQuickField('Dt.Nasc', $artdatanasc,  200 );
-        $this->form->addQuickField('Endereço', $artendereco,  300 );
-        $this->form->addQuickField('Bairro', $artbairro,  200 );
-        $this->form->addQuickField('CEP', $artcep,  100 );
-        $this->form->addQuickField('CPF', $artcpf,  100 );
+        $this->form->addQuickField('Dt.Nasc', $artdatanasc,  300 );
+        $this->form->addQuickField('Endereço', $artendereco,  400 );
+         $this->form->addQuickField('Complemento', $artcomplemento, 400 );
+        $this->form->addQuickField('Bairro', $artbairro,  400 );
+        $this->form->addQuickField('CEP', $artcep,  300 );
+        $this->form->addQuickField('CPF', $artcpf,  300 );
         $this->form->addQuickField('UF', $artuf,  50 );
-        $this->form->addQuickField('Cidade', $artcidade,  200 );
+        $this->form->addQuickField('Cidade', $artcidade,  400 );
         $this->form->addQuickField('Cidade Vinculo', $artvinculo,  400 );
-        $this->form->addQuickField('Complemento', $artcomplemento,  300 );
+       
         $this->form->addQuickField('Sexo', $artsexo,  200 );
-        $this->form->addQuickField('Fone', $artfone,  200 );
-        $this->form->addQuickField('Celular', $artcelular,  200 );
-        $this->form->addQuickField('Email', $artemail,  300 );
-        $this->form->addQuickField('Site', $artsite,  300 );
+        $this->form->addQuickField('Fone', $artfone,  400 );
+        $this->form->addQuickField('Celular', $artcelular,  300 );
+        $this->form->addQuickField('Email', $artemail,  400 );
+        $this->form->addQuickField('Site', $artsite,  400 );
         $this->form->addQuickField('Foto', $artfoto,  400 );
         $this->form->addQuickField('Pag. Facebook', $artfacebook,  '100%' );
         $this->form->addQuickField('Pag. Twitter', $arttwitter,  '100%' );

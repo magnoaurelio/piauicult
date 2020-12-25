@@ -242,8 +242,9 @@
                                 <a href="admin/files/musicas/audio/<?= $musica->musaudio ?>"
                                    id="<?= $musica->muscodigo ?>" class="media-btn">Play</a>
                                 <a title="<?= $disco_musica->disnome ?>"
-                                   href="?p=album&id=<?= $disco_musica->discodigo ?>" class=""><img
-                                            src="admin/files/discos/<?= $disco_musica->disimagem ?>" width="30" alt=""/>&nbsp;<small><?= $disco_musica->disnome ?></small>
+                                   href="?p=album&id=<?= $disco_musica->discodigo ?>" class="">
+                                    <img src="admin/files/discos/<?= $disco_musica->disimagem ?>" width="30" alt=""/>
+                                     &nbsp;<small><?= $disco_musica->disnome ?></small>
                                 </a>
                                 <h5 class="track-meta">&nbsp;<?= $interpretes_format ?></h5>
                                 <h4 class="track-title"><?= $musica->musnome ?></h4>
