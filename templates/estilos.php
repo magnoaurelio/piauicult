@@ -8,7 +8,7 @@ $genero['gennome'] = "Indefinido";
 if($gen->getRowCount()>0)
     $genero = $gen->getResult()[0];
 ?>
-<div id="main-wrap" style="margin-top: -80px">
+<div id="main-wrap" >
     <div id="main" class="row">
         <div class="large-12 columns">
 
@@ -27,8 +27,8 @@ if($gen->getRowCount()>0)
                     }
                 </style>
 
-                <div class="large-12 columns">
-                    <article class="post group" style="width: 100%; padding: 5px 20px 20px 20px;">
+                <div class="large-12 columns" >
+                    <article class="post group" style="width: 100%; padding: 0px 20px 20px 20px; margin-top:0px; ">
                         <div>
 
                             <!-- Nav tabs -->

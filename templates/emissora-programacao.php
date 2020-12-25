@@ -1,5 +1,5 @@
 <?php
-  $tempo = 0;
+$tempo = 0;
 $api = new Api();
 $precodigo =  $_GET['precodigo'];
 $filterAmpar = new Filter("precodigo","=", intval($precodigo));
@@ -195,7 +195,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                                         endif;
                         
                                                ?>
-                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn"" id="" class=""> 
+                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn" id="" class=""> 
                                                 <h4 class="track-title"><?= $aprnome ?></h4>
                                              </a> 
                                              <?php } ?>
@@ -395,7 +395,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                                             $gennome = $genero['gennome'];
                                                     } 
                                                  ?>
-                                                 <h6 class="track-title"><a href="#"><i class="icon-music"></i> Gênero:&nbsp;&nbsp;</a><?= $gennome ?></h6>
+                                                 <h6 class="track-title"><i class="icon-music"></i> Gênero:&nbsp;&nbsp;<a href="?p=estilos&genero=<?= $genero['gencodigo'] ?>" title="Veja todas as Musicasdo estilo: <?= $gennome ?> "><?= $gennome ?></a></h6>
                                              </a> 
                                             
                                         </td>
