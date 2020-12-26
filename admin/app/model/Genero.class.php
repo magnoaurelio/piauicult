@@ -19,6 +19,7 @@ class Genero extends TRecord
         parent::addAttribute('gennome');
         parent::addAttribute('genorigem');
         parent::addAttribute('genano');          
+        parent::addAttribute('geninstrumento');          
     }
 
 

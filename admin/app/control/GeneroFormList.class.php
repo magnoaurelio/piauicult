@@ -30,17 +30,23 @@ class GeneroFormList extends TPage
         // create the form fields
         $gencodigo = new TEntry('gencodigo');
         $gennome = new TEntry('gennome');
-        $genorigem = new TEntry('genorigem');
         $genano = new TEntry('genano');
+        $geninstrumento = new \Adianti\Widget\Form\TFile('geninstrumento');
+        $genorigem = new Adianti\Widget\Form\THtmlEditor('genorigem');
 
 
         // add the fields
         $this->form->addQuickField('Código', $gencodigo,  100 );
         $this->form->addQuickField('Gênero', $gennome,  200 );
-        $this->form->addQuickField('Origem', $genorigem,  200 );
         $this->form->addQuickField('Período', $genano,  200 );
+        $this->form->addQuickField('Instrumento', $geninstrumento,  200 );
+        $this->form->addQuickField('Origem', $genorigem, '100%' );
 
-
+        $data_now = date('dmYHis');
+        $getid = TSession::getValue('userid');
+        $nome_arquivo = 'GEN_'.$data_now.'_'.$getid;
+        $permite = array('GIF','gif','JPG','PNG','jpg','png','JPEG','jpeg');
+        $geninstrumento->setParametros('files/instrumento/',$nome_arquivo,$permite);
 
 
         /** samples
@@ -68,19 +74,29 @@ class GeneroFormList extends TPage
         // creates the datagrid columns
         $column_gencodigo = new TDataGridColumn('gencodigo', 'Código', 'left');
         $column_gennome = new TDataGridColumn('gennome', 'Gênero', 'left');
-        $column_genorigem = new TDataGridColumn('genorigem', 'Origem', 'left');
         $column_genano = new TDataGridColumn('genano', 'Ano-Período', 'left');
+        $column_geninstrumento = new TDataGridColumn('geninstrumento', 'Instrumento', 'left');
+        $column_genorigem = new TDataGridColumn('genorigem', 'Origem', 'left');
+       
 
   // criar na grade um ordenação
         $order_gennome = new TAction(array($this, 'onReload'));
         $order_gennome->setParameter('order', 'gennome');
         $column_gennome->setAction($order_gennome);
 
+        $column_geninstrumento->setTransformer( function($value, $object, $row) {
+            $img  = new TElement('img');
+            $img->src = "files/instrumento/".$value;
+            $img->style = "width:60px; height:60px;";
+            return $img;
+        });
         // add the columns to the DataGrid
         $this->datagrid->addColumn($column_gencodigo);
         $this->datagrid->addColumn($column_gennome);
+         $this->datagrid->addColumn($column_genano);
+        $this->datagrid->addColumn($column_geninstrumento);
         $this->datagrid->addColumn($column_genorigem);
-        $this->datagrid->addColumn($column_genano);
+       
 
         
         // creates two datagrid actions
@@ -132,7 +148,7 @@ class GeneroFormList extends TPage
             
             // creates a repository for Genero
             $repository = new TRepository('Genero');
-            $limit = 10;
+            $limit = 20;
             // creates a criteria
             $criteria = new TCriteria;
             

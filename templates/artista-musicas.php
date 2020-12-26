@@ -40,7 +40,7 @@
                                 }
                             }
 
-                            $total = new Total();
+                        $total = new Total();
                         $artistas = new Artista(null, "ORDER BY artusual ASC");
                         $artistaCodigos = [];
                         foreach ($artistas->getResult() as $artista) {

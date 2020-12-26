@@ -5,8 +5,13 @@ $genero['gencodigo'] = NULL;
 $genero['gennome'] = "Indefinido";
 
 @$gen->ExeRead('genero',"WHERE gencodigo = :c","c=".$_GET['genero']);
+
 if($gen->getRowCount()>0)
-    $genero = $gen->getResult()[0];
+   $genero = $gen->getResult()[0];
+   $imgp = "admin/files/instrumento/" . trim($genero->geninstrumento);
+    if (!file_exists($imgp) or ! is_file($imgp)):
+        $imgp = 'admin/files/imagem/instrumento.png';
+    endif;
 ?>
 <div id="main-wrap" >
     <div id="main" class="row">
@@ -36,6 +41,9 @@ if($gen->getRowCount()>0)
                                 <div class="col-lg-12 cabeca">
                                     <header class="entry-top special-top">
                                         <h1 class="entry-title page-title">Músicas do gênero <?=strtoupper($genero['gennome'])?> </h1>
+                                           <div id="lyrics-1" class="track-lyrics-hold">
+                                            <p><img src="<?= $imgp ?>" width="auto"  alt="instrumento" /></p>
+                                        </div>
                                     </header>
                                 </div>
                                 <?php
