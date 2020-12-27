@@ -178,8 +178,7 @@ class ArtistaInstrumentoList extends TPage
             $criteria = new TCriteria;
             $artista =  new Artista(TSession::getValue('artcodigo'));
              TScript::create('
-              $("#artnome").html("'.$artista->artnome.'")    
-            ');
+              $("#artnome").html("'.$artista->artnome.'")');
             $this->datagrid->clear();
             if(!empty($artista->inscodigo)){
                 $ids = explode(';',$artista->inscodigo);

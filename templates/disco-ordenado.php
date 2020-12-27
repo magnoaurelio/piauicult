@@ -90,7 +90,6 @@
                                                                     <a href="?p=album&id=<?= $disco['discodigo']; ?>" class="" title=" Ir para o DISCO:<?= $disco['disnome']; ?>">
                                                                         <img src="admin/files/discos/<?= $disco['disimagem']; ?>" width="120" alt="" />
                                                                     </a>
-                                                                   
                                                                   </td>
                                                                   <br/>
                                                                   <td  width="90">

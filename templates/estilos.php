@@ -8,9 +8,9 @@ $genero['gennome'] = "Indefinido";
 
 if($gen->getRowCount()>0)
    $genero = $gen->getResult()[0];
-   $imgp = "admin/files/instrumento/" . trim($genero->geninstrumento);
+   $imgp = "admin/files/instrumento/" . trim($genero['geninstrumento']);
     if (!file_exists($imgp) or ! is_file($imgp)):
-        $imgp = 'admin/files/imagem/instrumento.png';
+        $imgp = 'admin/files/imagem/instrumento.jpg';
     endif;
 ?>
 <div id="main-wrap" >
@@ -40,10 +40,9 @@ if($gen->getRowCount()>0)
                             <ul class="nav nav-tabs" role="tablist">
                                 <div class="col-lg-12 cabeca">
                                     <header class="entry-top special-top">
-                                        <h1 class="entry-title page-title">Músicas do gênero <?=strtoupper($genero['gennome'])?> </h1>
-                                           <div id="lyrics-1" class="track-lyrics-hold">
-                                            <p><img src="<?= $imgp ?>" width="auto"  alt="instrumento" /></p>
-                                        </div>
+                                        <h1 class="entry-title page-title">Músicas do gênero<a href="?p=instrumentistas&id=<?= $genero['gencodigo'] ?>"> <?=strtoupper($genero['gennome'])?> 
+                                         &nbsp;&nbsp;  <img src="<?= $imgp ?>" width="80" height="80"  alt="instrumento" /></a>
+                                        </h1>
                                     </header>
                                 </div>
                                 <?php

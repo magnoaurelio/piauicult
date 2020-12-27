@@ -60,7 +60,7 @@
                   <h1 class="entry-title page-title">
                       <img src="images/lupa.png" width="35" height="35" alt="lupa" />&nbsp;&nbsp;&nbsp;
                       <a href="?p=artista-genero&ID=<?= $genero->gencodigo ?>">
-                          Musicas & Generos
+                          Musicas & Generos 
                       </a>
                   </h1>
                 </header>   
@@ -73,13 +73,14 @@
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
                                 <div class="col-lg-12 cabeca">
+                                   
                                     <header class="entry-top special-top">
-                                        <h1 class="entry-title page-title">Músicas do gênero <?=strtoupper($genero['gennome'])?> </h1>
-                                        
+                                        <h1 class="entry-title page-title">Músicas do gênero <?=strtoupper($genero['gennome'])?> 
+                                            &nbsp;  <img src="<?= $imgins ?>" width="50px" height="50"  alt="instrumento" /> 
+                                        </h1>
                                     </header>
-                                    <div id="lyrics-1" class="track-lyrics-hold">
-                                            <p><img src="<?= $imgins ?>" width="auto"  alt="instrumento" /></p>
-                                        </div>
+                                   
+                                                                                 
                                 </div>
                                 <?php
                                 $n = 65;

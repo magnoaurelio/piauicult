@@ -38,7 +38,7 @@
     </menuitem>
     
     <menuitem label='PIAUICult'>
-        <icon>fa:desktop  fa-fw #DAA520</icon> 
+        <icon>fa:desktop fa-lg  fa-fw #DAA520</icon> 
         <menu>
            <menuitem label='ARTISTAS'>
                     <icon>fa:star fa-lg blue</icon>
@@ -65,12 +65,17 @@
                     <icon>fa:music fa-lg #006400</icon>
                     <menu>
                         <menuitem label='MÚSICAS - Publicar'>
-                            <icon>fa:music fa-fw</icon>
+                            <icon>fa:music fa-lg fa-fw #006400</icon>
                             <action>MusicaList</action>
                         </menuitem>
                         <menuitem label='MUSICAS - Gênero'>
-                            <icon>fa:music fa-fw</icon>
+                            <icon>fa:music fa-lg fa-fw #006400</icon>
                             <action>GeneroFormList</action>
+                        </menuitem>
+                        
+                        <menuitem label='MUSICAS - Gênero 2'>
+                            <icon>fa:headphones fa-lg fa-fw #006400</icon>
+                            <action>GeneroList</action>
                         </menuitem>
                     </menu>
                 </menuitem>
