@@ -1,6 +1,34 @@
 <?php
 class DadosFixos{
     
+     public static function getLimits($id = null) {
+        $limit = [
+            5 => "Documentário"
+        ];
+        if ($id == null) {
+            return $limit;
+        } else {
+            return $limit[$id];
+        }
+    }
+     public static function TipoVideo($id = null) {
+        $video = [
+            1 => "Documentário",
+            2 => "Entrevista",
+            3 => "Espetáculo",
+            4 => "Pessoal",
+            5 => "Apresentação",
+            6 => "Festival",
+            7 => "Outro"
+        ];
+        if ($id == null) {
+            return $video;
+        } else {
+            return $video[$id];
+        }
+    }
+    
+    
     static function tipoAssessor($id=null){
         $tipo_c = [
             'A'=>'Assessor',
