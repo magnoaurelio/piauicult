@@ -23,6 +23,6 @@ class Genero extends TRecord
         parent::addAttribute('genimagem');          
         parent::addAttribute('inscodigo');          
     }
-
+     
 
 }

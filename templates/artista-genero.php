@@ -12,7 +12,7 @@
     }
 </style>
 <br/>    
-<div id="main-wrap" >
+<div id="main-wrap" style="margin-top: -20px">
     <div id="main" class="row">
         
          <div class="large-12 columns">
@@ -41,17 +41,13 @@
                             }
 
                         $total = new Total();
-                        $generos = new Read();
-                        $generos->ExeRead("genero", "ORDER BY gennome ASC" );
-                        $generomusicas = [];
+                      //  $generos = new Read();
+                      //  $generos->ExeRead("genero", "ORDER BY gennome ASC" );
+                        $generos = new Genero(null, "ORDER BY gennome ASC");
+                        $generoCodigos = [];
                         foreach ($generos->getResult() as $genero) {
-                            $generomusicas[] = $genero['gencodigo'];
-                             $imgins = "admin/files/instrumento/" . trim($genero->geninstrumento);
-                            if (!file_exists($imgins) or ! is_file($imgins)):
-                                $imgins = 'admin/files/imagem/instrumento.png';
-                            endif;
-                            
-                            $selected = isset($_GET['ID']) && $_GET['ID'] == $genero['gencodigo'] ? 'selected=selected' : "";
+                            $generoCodigos[] = $genero['gencodigo'];
+                            $selected = isset($_GET['id']) && $_GET['id'] == $genero['gencodigo'] ? 'selected=selected' : "";
                             echo "<option {$selected} value={$genero['gencodigo']}>{$genero['gennome']}-{$genero['gencodigo']}</option>";
                         }
                         ?>
@@ -69,15 +65,65 @@
              <div class="large-12 columns" >
                     <article class="post group" style="width: 100%; padding: 0px 20px 20px 20px; margin-top:0px; ">
                         <div>
-
+                            <?php
+                             $id = isset($_GET['id']) ? $_GET['id'] : array_rand($generoCodigos, 1);
+                             $genero = new Genero($id);
+                             
+                            $imgins = "admin/files/instrumento/" . trim($genero->geninstrumento);
+                            if (!file_exists($imgins) or ! is_file($imgins)):
+                                $imgins = 'admin/files/imagem/instrumento.png';
+                            endif;
+                            
+                            ?>
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
                                 <div class="col-lg-12 cabeca">
                                    
                                     <header class="entry-top special-top">
-                                        <h1 class="entry-title page-title">Músicas do gênero <?=strtoupper($genero['gennome'])?> 
-                                            &nbsp;  <img src="<?= $imgins ?>" width="50px" height="50"  alt="instrumento" /> 
+                                        <h1 class="entry-title page-title">Sobre:&nbsp;&nbsp; <a href="#">
+                                            <?=strtoupper($genero->gennome)?> 
+                                            </a>
+                                            &nbsp;<i style="font-size:20px;">Instrumentos:</i>&nbsp;&nbsp; 
+                                            <a href="#" title="Aprenda mais sobre o instrumento: <?= $genero->gennome ?> "> 
+                                               <?php 
+                                                if (!file_exists($imgins) or ! is_file($imgins)):
+                                                    $imgins = 'admin/files/imagem/instrumento.png';
+                                                else:
+                                               ?>  
+                                                <img src="<?= $imgins ?>" width="50px" height="50"  alt="instrumento" /> 
+                                                <?php 
+                                                endif;
+                                               ?> 
+                                            </a>
                                         </h1>
+                                         <?= substr($genero->genorigem,0,400)?> ...<a href="#">Aprenda mais</a>
+                                        <h1 class="entry-title page-title">Músicas do gênero:&nbsp;&nbsp;<a href="#">
+                                            <?=strtoupper($genero->gennome)?> 
+                                            </a>
+                                             <?php
+                                              /** @agaurde ...
+                                                $artistas = new Artista(null, "ORDER BY artusual ASC");
+                                                $artistaCodigos = [];
+                                                foreach ($artistas->getResult() as $artista) {
+                                                    $artistaCodigos[] = $artista['artcodigo'];
+                                                    $artista = new $artista['artcodigo'];
+                                                }
+                                               * 
+                                               */
+                                                ?>
+                                            &nbsp;<i style="font-size:20px;">Nomes:</i>&nbsp;&nbsp; 
+                                            <?php 
+                                                if (!file_exists($imgins) or ! is_file($imgins)):
+                                                    $imgins = 'admin/files/imagem/instrumento.png';
+                                                else:
+                                               ?>  
+                                                <img src="<?= $imgins ?>" width="50px" height="50"  alt="instrumento" /> 
+                                                <?php 
+                                                endif;
+                                               ?> 
+                                        </h1>
+                                        
+                                         
                                     </header>
                                    
                                                                                  
@@ -110,7 +156,7 @@
                                             <?php
                                             $musicas = new Read;
                                             $musicas->ExeRead("musica", "WHERE  SUBSTRING(musnome,1,1) = :letra and gencodigo = :cod  ORDER BY musnome", "letra={$letra
-                                                    }&cod={$genero['gencodigo']}");
+                                                    }&cod={$genero->gencodigo}");
                                             if ($musicas->getResult()):
                                                 foreach ($musicas->getResult() as $musica):
                                                     $musica = new Musica($musica['muscodigo']);
@@ -167,7 +213,7 @@
                                                         <?php else: ?>
                                                             <a class="media-btn" style="background-color:#CCC;">Play</a>
                                                         <?php endif; ?>
-                                                        <h5 class="track-meta">&nbsp;<?= $musica->musduracao ?> &nbsp; <?= $genero['gennome'] ?></h5>
+                                                        <h5 class="track-meta">&nbsp;<?= $musica->musduracao ?> &nbsp; <?= $genero->gennome ?></h5>
                                                         <h4 class="track-title"><?= $musica->musnome ?></h4><br/>
                                                         <table width="100%" border="0">
                                                             <tr>
@@ -229,7 +275,7 @@
         if (this.value == 0) {
             top.location.href = "?p=artista-genero";
         } else {
-            top.location.href = "?p=artista-genero&ID=" + this.value;
+            top.location.href = "?p=artista-genero&id=" + this.value;
         }
     });
 </script>

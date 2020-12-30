@@ -39,7 +39,6 @@
                                     return $this->valor;
                                 }
                             }
-
                         $total = new Total();
                         $artistas = new Artista(null, "ORDER BY artusual ASC");
                         $artistaCodigos = [];
