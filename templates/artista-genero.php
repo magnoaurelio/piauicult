@@ -84,43 +84,51 @@
                                             <?=strtoupper($genero->gennome)?> 
                                             </a>
                                             &nbsp;<i style="font-size:20px;">Instrumentos:</i>&nbsp;&nbsp; 
-                                            <a href="#" title="Aprenda mais sobre o instrumento: <?= $genero->gennome ?> "> 
+                                            <a href="?p=genero_instrumento&gencodigo=<?= $genero->gencodigo ?>" title="Aprenda mais sobre o instrumento: <?= $genero->gennome ?> "> 
                                                <?php 
                                                 if (!file_exists($imgins) or ! is_file($imgins)):
                                                     $imgins = 'admin/files/imagem/instrumento.png';
                                                 else:
                                                ?>  
-                                                <img src="<?= $imgins ?>" width="50px" height="50"  alt="instrumento" /> 
+                                                <img src="<?= $imgins ?>" width="90px" height="90"  alt="instrumento" /> 
                                                 <?php 
                                                 endif;
                                                ?> 
                                             </a>
+                                            &nbsp;<i style="font-size:20px;">Nomes:</i>&nbsp;&nbsp; 
+                                            <?php
+                                                    $artcodigo = $genero->artcodigo;
+                                                    if($artcodigo === null):
+                                                     ?> 
+                                                    <img src="admin/files/imagem/ARTISTA_ARTISTA.jpg" width="90px" height="90"  alt="artista" />
+                                                    <?php    
+                                                    else:
+                                                     
+                                                    $artista = new Artista(null, "WHERE artcodigo = $artcodigo ORDER BY artcodigo ASC");
+                                                    foreach ($artista->getResult() as $artista) {
+                                                        $artfoto = $artista['artfoto'];
+                                                        $artnome = $artista['artnome'];
+                                                        $artusual = $artista['artusual'];
+
+
+                                                   $imgart = "admin/files/artistas/" .trim($artista['artfoto']);
+                                                   if (!file_exists($imgart) or ! is_file($imgart)):
+                                                       $imgart = 'admin/files/imagem/artista.png';
+                                                   endif;
+                                                   
+                                                   ?> 
+                                            
+                                             <a href="?p=genero_artista&gencodigo=<?= $genero->gencodigo ?>" title=" Artista: <?=$artusual ?>">
+                                              <img src="<?= $imgart ?>" width="90px" height="90"  alt="artista" /> <br>
+                                           </a>
+                                            <?php   }
+                                            endif;
+                                            ?> 
                                         </h1>
-                                         <?= substr($genero->genorigem,0,400)?> ...<a href="#">Aprenda mais</a>
-                                        <h1 class="entry-title page-title">Músicas do gênero:&nbsp;&nbsp;<a href="#">
+                                         <?= substr($genero->genorigem,0,400)?> ...<a href="?p=genero_artista&gencodigo=<?= $genero->gencodigo ?>">Aprenda mais</a>
+                                        <h1 class="entry-title page-title">Músicas do gênero:&nbsp;&nbsp;<a href="?p=genero_artista&gencodigo=<?= $genero->gencodigo ?>">
                                             <?=strtoupper($genero->gennome)?> 
                                             </a>
-                                             <?php
-                                              /** @agaurde ...
-                                                $artistas = new Artista(null, "ORDER BY artusual ASC");
-                                                $artistaCodigos = [];
-                                                foreach ($artistas->getResult() as $artista) {
-                                                    $artistaCodigos[] = $artista['artcodigo'];
-                                                    $artista = new $artista['artcodigo'];
-                                                }
-                                               * 
-                                               */
-                                                ?>
-                                            &nbsp;<i style="font-size:20px;">Nomes:</i>&nbsp;&nbsp; 
-                                            <?php 
-                                                if (!file_exists($imgins) or ! is_file($imgins)):
-                                                    $imgins = 'admin/files/imagem/instrumento.png';
-                                                else:
-                                               ?>  
-                                                <img src="<?= $imgins ?>" width="50px" height="50"  alt="instrumento" /> 
-                                                <?php 
-                                                endif;
-                                               ?> 
                                         </h1>
                                         
                                          

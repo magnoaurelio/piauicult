@@ -66,6 +66,21 @@ class Instrumento extends Read {
         endforeach;
         return $musicos;
     }
+    
+    public function getGeneros() {
+        $musicos = [];
+        $artistas = new Artista(null, "ORDER BY artnome");
+        foreach ($artistas->getResult() as $artista):
+            $ids = explode(';', $artista['inscodigo']);
+            foreach ($ids as $id):
+                if ($id == $this->inscodigo):
+                    $musico = new Artista($artista['artcodigo']);
+                    $musicos[] = $musico;
+                endif;
+            endforeach;
+        endforeach;
+        return $musicos;
+    }
 
     public static function getMusicosOrdem($id = null) {
         $collections = [];

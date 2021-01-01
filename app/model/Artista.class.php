@@ -103,6 +103,18 @@ class Artista extends Read {
         endif;
         return $collections;
     }
+    
+    public function getGeneros() {
+        $collections = [];
+        if ($this->gencodigo):
+            $ids = explode(';', $this->gencodigo);
+            foreach ($ids as $id):
+                $object = new Genero($id);
+                $collections[] = $object;
+            endforeach;
+        endif;
+        return $collections;
+    }
 
      function getInstrumentosByMusica($musicoCodigo, $musicaCodigo){
         parent::parseQuery("SELECT i.* from musico_instrumento as mi
