@@ -217,14 +217,20 @@
                                                 <tr>
                                                    <td  width="100" width="100" style="margin-left: 50px; padding-right: -10px;"> 
                                                         <small><img src="/images/icone/music.png" width="16"> Disco</small>
-                                                        <a href="?p=album&id=<?= $disco_musica->discodigo ?>" title="Ir para o DISCO:  <?=  $disco_musica->disnome ?> "class=""><img src="admin/files/discos/<?= $disco_musica->disimagem ?>" width="90" alt="" /></a>
+                                                        <a href="?p=album&id=<?= $disco_musica->discodigo ?>" title="Ir para o DISCO:  <?=  $disco_musica->disnome ?> "class="">
+                                                            <img src="admin/files/discos/<?= $disco_musica->disimagem ?>" width="90" alt="" />
+                                                        </a>
                                                     </td>
-                                                   <td  width="90">  <small><img src="/images/icone/star.png" width="16"> Autor</small>
-                                                       <a href="?p=artist&id=<?= $TAutor->artcodigo ?>"  title="Ir para o AUTOR:  <?=  $TAutor->artusual ?> "><img src="admin/files/artistas/<?= $TAutor->artfoto ?>" width="90" alt="" /></a>
+                                                   <td  width="90"> 
+                                                       <small><img src="/images/icone/star.png" width="16"> Autor</small>
+                                                       <a href="?p=artist&id=<?= $TAutor->artcodigo ?>"  title="Ir para o AUTOR:  <?=  $TAutor->artusual ?> ">
+                                                           <img src="admin/files/artistas/<?= $TAutor->artfoto ?>" width="90" alt="" /></a>
                                                     </td>
                                                     <td  width="90"> 
                                                         <small><img src="/images/icone/microfone.png" width="16"> Interprete</small>
-                                                        <a href="?p=artist&id=<?= $interprete->artcodigo ?>"  title="Ir para o INTÉRPRETE:  <?=  $interprete->artusual ?> "><img src="admin/files/artistas/<?= $interprete->artfoto  ?>" width="90" alt="" /></a>
+                                                        <a href="?p=artist&id=<?= $interprete->artcodigo ?>"  title="Ir para o INTÉRPRETE:  <?=  $interprete->artusual ?> ">
+                                                            <img src="admin/files/artistas/<?= $interprete->artfoto  ?>" width="90" alt="" />
+                                                        </a>
                                                     </td>
                                  
                                                     <td width="10" align="right">

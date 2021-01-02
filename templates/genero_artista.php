@@ -1,6 +1,5 @@
 <?php
     $gencodigo = $_GET['gencodigo'];
-    $artcodigo = $_GET['artcodigo'];
     $generos = new Genero(null, "WHERE gencodigo = $gencodigo ORDER BY gencodigo ASC");
     $generoCodigos = [];
     foreach ($generos->getResult() as $genero) {
@@ -19,7 +18,7 @@
 <div id="main-wrap">
     <div id="main" class="row" style="margin-top: -20px;">
         <div class="large-12 columns">
-            <h4>Artistas do Gênero:<a href="?p=artista-genero&id=<?=$gencodigo ?>"> <?=$gennome ?></a> </h4>
+            <h4>Artistas do Gênero:<a href="?p=artista-genero&id=<?=$gencodigo ?>" title="Voltar Página Gênero"> <?=$gennome ?></a> </h4>
             <?php
                   $artcodigo = $genero['artcodigo'];
                   $artista = new Artista(null, "WHERE artcodigo = $artcodigo ORDER BY artcodigo ASC");
@@ -39,13 +38,13 @@
                 <li class="large-3 columns">
                     <div class="li-content">
                         <figure class="event-thumb">
-                                <a href="?p=artist&id=<?=$artcodigo ?>">
+                            <a href="?p=artist&id=<?=$artcodigo ?>" title="Veja mais sobre: <?=$artusual ?>">
                                         <img src=" <?=$imgart ?>" alt="" />
-                                        <!--div class="overlay icon-picture"></div-->
+                                        <div class="overlay icon-info"></div>
                                 </a>			
                         </figure>
-                        <h4 class="list-title"><a href="?p=artist&id=<?=$artcodigo ?>"><?=$artusual ?></a></h4>
-                        <a href="#" class="action-btn">Veja mais...</a>
+                        <h4 class="list-title"><a href="?p=artist&id=<?=$artcodigo ?>" title="Veja mais sobre: <?=$artusual ?>"><?=$artusual ?></a></h4>
+                        <a href="?p=artist&id=<?=$artcodigo ?>" title="Veja mais sobre: <?=$artusual ?>" class="action-btn">Veja mais...</a>
                     </div>
 
                 </li>
@@ -58,12 +57,11 @@
                      <article class="post group">   
                            <header class="entry-top special-top"> 
                                 <article class="post group" >
-
+                                <h4>Histórico do Gênero:<a href="?p=artista-genero&id=<?=$gencodigo ?>" title="Voltar Página Gênero"> <?=$gennome ?></a> </h4>
                                 <div class="entry-content">
                                     <div class="row">
-                                        <div class="large-8 columns">
-                                            <?= $genero['genorigem']?> 
-                                        </div>
+                                        <div class="large-8 columns"></div>
+                                    <?= $genero['genorigem']?> 
                                     </div>
                                 </div>
                                </article>

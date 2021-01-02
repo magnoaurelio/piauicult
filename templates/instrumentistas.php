@@ -15,54 +15,67 @@ endif;
                 <header class="entry-top special-top">
                     <h1 class="entry-title page-title"> <img src="<?= $insfoto ?>" width="80" height="80" /><?= $instrumento->insnome ?></h1>
                     <ul class="cpt-meta">
-                        <li><span>Histórico. :</span><?= $instrumento->inshistorico?></li>
                         <li><span>Acessório 1:</span><?= $instrumento->insassessorio1 ?></li>
                         <li><span>Acessório 2:</span><?= $instrumento->insassessorio2 ?></li>
                         <li><span>Acessório 3:</span><?= $instrumento->insassessorio3 ?></li>
-                      
-
                     </ul>
-                </header>	
+                </header>
+                  <div class="large-12 columns" >
+                     <article class="post group">   
+                           <header class="entry-top special-top"> 
+                                <article class="post group" >
+                                <h4>Sobre o Instrumento:<a href="?p=artista-genero&id=<?=$gencodigo ?>" title="Voltar Página Gênero"> <?=$instrumento->insnome ?></a> </h4>
+                                <div class="entry-content">
+                                    <div class="row">
+                                      <div class="large-8 columns"></div>
+                                    <?= $instrumento->inshistorico?> 
+                                    </div>
+                                </div>
+                               </article>
+                           </header>
+                       </article>
+            </div>
 
                 <?php
-                $artitas = $instrumento->getMusicos();
+                $artistas = $instrumento->getMusicos();
                 ?>
                 <div class="entry-content">
-                    <h3>Artistas deste instrumento</h3>				
-                    <ol class="tracklisting">
-                        <?php
-                        if ($artitas):
-                            foreach ($artitas as $artista):
-                                $imgp = "admin/files/artistas/" . trim($artista->artfoto);
-                                if (!file_exists($imgp) or ! is_file($imgp)):
-                                    $imgp = 'admin/app/images/user.png';
-                                endif;
-                                ?>
-                                <li class="group track">
-                                    <a href="?p=artist&id=<?= $artista->artcodigo ?>" class="">
-                                        <table width="100%" border="0">
-                                            <tr>
-                                                <td  width="65"> 
-                                                    <img src="<?= $imgp ?>" width="60" alt="" />
-                                                </td>
-                                                <td align="left">
-                                                    <h4><?= $artista->artusual ?></h4>
-                                                </td>
+                 <h4>Artistas do Instrumento:<a href="?p=artista-genero&id=<?=$gencodigo ?>" title="Voltar Página Gênero"> <?=$instrumento->insnome ?></a> </h4>
+			
+                        
+                                <ul class="list row">
+                                    <?php
+                                    if ($artistas):
+                                        foreach ($artistas as $artista):
+                                            $imgp = "admin/files/artistas/" . trim($artista->artfoto);
+                                            if (!file_exists($imgp) or ! is_file($imgp)):
+                                                $imgp = 'admin/app/images/user.png';
+                                            endif;
+                                    ?>
+                                    <li class="large-3 columns">
+                                        <div class="li-content">
+                                            <figure class="event-thumb">
+                                                <a href="?p=artist&id=<?= $artista->artcodigo ?>" title="Veja mais sobre: <?=$artista->artusual ?>">
+                                                            <img src=" <?=$imgp ?>" alt="" />
+                                                            <div class="overlay icon-info"></div>
+                                                    </a>			
+                                            </figure>
+                                            <h4 class="list-title">
+                                                <a href="?p=artist&id=<?= $artista->artcodigo ?>" title="Veja mais sobre: <?=$artista->artusual ?>">
+                                               <?=$artista->artusual ?>
+                                                </a>
+                                            </h4>
+                                            <a href="?p=artist&id=<?= $artista->artcodigo ?>" title="Veja mais sobre: <?=$artista->artusual ?>" class="action-btn">Veja mais...</a>
+                                        </div>
 
-                                            </tr>
-                                        </table>
-                                    </a>
-                                </li>
+                                    </li>
+                               
                                 <?php
                             endforeach;
                         endif;
                         ?>
-
-                    </ol>
-
+                         </ul>
                 </div>
-
-
             </article><!-- /post -->
 
         </div>

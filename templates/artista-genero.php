@@ -84,7 +84,7 @@
                                             <?=strtoupper($genero->gennome)?> 
                                             </a>
                                             &nbsp;<i style="font-size:20px;">Instrumentos:</i>&nbsp;&nbsp; 
-                                            <a href="?p=genero_instrumento&gencodigo=<?= $genero->gencodigo ?>" title="Aprenda mais sobre o instrumento: <?= $genero->gennome ?> "> 
+                                            <a href="?p=genero_instrumento&gencodigo=<?= $genero->gencodigo ?>&inscodigo=<?= $genero->inscodigo ?>" title="Aprenda mais sobre o instrumento: <?= $genero->gennome ?> "> 
                                                <?php 
                                                 if (!file_exists($imgins) or ! is_file($imgins)):
                                                     $imgins = 'admin/files/imagem/instrumento.png';
@@ -100,9 +100,7 @@
                                                     $artcodigo = $genero->artcodigo;
                                                     if($artcodigo === null):
                                                      ?> 
-                                                    <a href="?p=genero_artista&gencodigo=<?= $genero->gencodigo ?>&artcodigo=888">
                                                     <img src="admin/files/imagem/ARTISTA_ARTISTA.jpg" width="90px" height="90"  alt="artista" />
-                                                    </a>
                                                     <?php    
                                                     else:
                                                      
@@ -120,17 +118,15 @@
                                                    
                                                    ?> 
                                             
-                                             <a href="?p=genero_artista&gencodigo=<?= $genero->gencodigo ?>&artcodigo=<?= $genero->artcodigo ?>" title=" Artista: <?=$artusual ?>">
+                                             <a href="?p=genero_artista&gencodigo=<?= $genero->gencodigo ?>" title=" Artista: <?=$artusual ?>">
                                               <img src="<?= $imgart ?>" width="90px" height="90"  alt="artista" /> <br>
                                            </a>
                                             <?php   }
                                             endif;
                                             ?> 
                                         </h1>
-                                         <?= substr($genero->genorigem,0,400)?> ...
-                                         <a href="?p=genero_artista&gencodigo=<?= $genero->gencodigo ?>">Aprenda mais</a>
-                                        <h1 class="entry-title page-title">Músicas do gênero:&nbsp;&nbsp;
-                                            <a href="?p=genero_artista&gencodigo=<?= $genero->gencodigo ?>">
+                                         <?= substr($genero->genorigem,0,400)?> ...<a href="?p=genero_artista&gencodigo=<?= $genero->gencodigo ?>">Aprenda mais</a>
+                                        <h1 class="entry-title page-title">Músicas do gênero:&nbsp;&nbsp;<a href="?p=genero_artista&gencodigo=<?= $genero->gencodigo ?>">
                                             <?=strtoupper($genero->gennome)?> 
                                             </a>
                                         </h1>

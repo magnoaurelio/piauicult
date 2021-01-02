@@ -137,7 +137,11 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filter->getValu
                                     <td><i class="icon-film "></i>&nbsp;<?=$total->soma((new Cinema())->getRowCount())?></td>
                                 </tr>
                                 <tr>
-                                    <th><a href="?p=links" title="Cadastro de LINKS CULTURAIS das Cidades" >21-Links Culturais</a></th>
+                                    <th><a href="?p=artista-genero" title="Cadastro de GÊNEROS MUSICAIS das Músicas" >21-Gêneros Musicais</a></th>
+                                    <td><i class="icon-headphones"></i>&nbsp;<?=$total->soma((new Genero())->getRowCount())?></td>
+                                </tr>
+                                <tr>
+                                    <th><a href="?p=links" title="Cadastro de LINKS CULTURAIS das Cidades" >22-Links Culturais</a></th>
                                     <td><i class="icon-globe"></i>&nbsp;<?=$total->soma((new Links())->getRowCount())?></td>
                                 </tr>
                                 <tr>

@@ -99,7 +99,7 @@ class GeneroList extends TPage
         $column_genimagem->setTransformer( function($value, $object, $row) {
             $img  = new TElement('img');
             $img->src = "files/instrumento/".$value;
-            $img->style = "width:100px; height:80px;";
+            $img->style = "width:100px; height:100px;";
             return $img;
         });
         //</onBeforeColumnsCreation>

@@ -149,9 +149,9 @@ class GeneroInstrumentoList extends TPage
     public function onSearch($param)
     {
        TTransaction::open('conexao');
-        $artista =  new Genero(TSession::getValue('gencodigo'));
+        $genero =  new Genero(TSession::getValue('gencodigo'));
         if(!empty($genero->inscodigo)){
-            $ids = explode(';',$artista->inscodigo);
+            $ids = explode(';',$genero->inscodigo);
         }else{
             $ids = [];        
         }
@@ -159,7 +159,7 @@ class GeneroInstrumentoList extends TPage
          $ids[] = $param['inscodigo'];
         }
        $genero->inscodigo  = implode(';',$ids);
-       $artista->store();
+       $genero->store();
        TTransaction::close();
        $this->onReload();
     }
@@ -230,8 +230,8 @@ class GeneroInstrumentoList extends TPage
                   }
                }
          }
-        $artista->inscodigo  = implode(';',$ids);
-        $artista->store();
+        $genero->inscodigo  = implode(';',$ids);
+        $genero->store();
        TTransaction::close();
        $this->onReload();
     }
