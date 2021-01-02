@@ -136,6 +136,26 @@ class GeneroList extends TPage
         $action_editar->setImage('fa:music blue fa-lg');
         $action_editar->setField('gencodigo');
         $this->datagrid->addAction($action_editar);
+        
+        // instrumentos
+        $action_editarArt = new TDataGridAction(array('GeneroArtistaList', 'onLoad'));
+        $action_editarArt->setUseButton(TRUE);
+        $action_editarArt->setButtonClass('btn btn-default');
+        $action_editarArt->setLabel('Artistas');
+        $action_editarArt->setImage('fa:star blue fa-lg');
+        $action_editarArt->setField('gencodigo');
+        $this->datagrid->addAction($action_editarArt);
+        
+        /** @aguarde // create EDIT action
+        $action_editarArt = new TDataGridAction(array('GeneroArtistaList', 'onLoad'));
+        $action_editarArt->setUseButton(TRUE);
+        $action_editarArt->setButtonClass('btn btn-default');
+        $action_editarArt->setLabel('Artistas');
+        $action_editarArt->setImage('fa:star blue fa-lg');
+        $action_editarArt->setField('gencodigo');
+        $this->datagrid->addAction($action_editarArt);
+         * 
+         */
 
         // create the datagrid model
         $this->datagrid->createModel();

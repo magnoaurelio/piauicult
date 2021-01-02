@@ -1,5 +1,6 @@
 <?php
     $gencodigo = $_GET['gencodigo'];
+    $artcodigo = $_GET['artcodigo'];
     $generos = new Genero(null, "WHERE gencodigo = $gencodigo ORDER BY gencodigo ASC");
     $generoCodigos = [];
     foreach ($generos->getResult() as $genero) {
@@ -18,7 +19,7 @@
 <div id="main-wrap">
     <div id="main" class="row" style="margin-top: -20px;">
         <div class="large-12 columns">
-            <h4>Artistas do Gênero:<a href="#"> <?=$gennome ?></a> </h4>
+            <h4>Artistas do Gênero:<a href="?p=artista-genero&id=<?=$gencodigo ?>"> <?=$gennome ?></a> </h4>
             <?php
                   $artcodigo = $genero['artcodigo'];
                   $artista = new Artista(null, "WHERE artcodigo = $artcodigo ORDER BY artcodigo ASC");
@@ -40,7 +41,7 @@
                         <figure class="event-thumb">
                                 <a href="?p=artist&id=<?=$artcodigo ?>">
                                         <img src=" <?=$imgart ?>" alt="" />
-                                        <div class="overlay icon-picture"></div>
+                                        <!--div class="overlay icon-picture"></div-->
                                 </a>			
                         </figure>
                         <h4 class="list-title"><a href="?p=artist&id=<?=$artcodigo ?>"><?=$artusual ?></a></h4>
@@ -60,8 +61,9 @@
 
                                 <div class="entry-content">
                                     <div class="row">
-                                        <div class="large-8 columns"></div>
-                            <?= $genero['genorigem']?> 
+                                        <div class="large-8 columns">
+                                            <?= $genero['genorigem']?> 
+                                        </div>
                                     </div>
                                 </div>
                                </article>
