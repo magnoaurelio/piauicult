@@ -3,6 +3,7 @@ $api = new Api();
 $precodigo =  $_GET['precodigo'];
 $filterAmpar = new Filter("precodigo","=", intval($precodigo));
 $prefeitura = $api->getPrefeitura([$filterAmpar->getValue()], true);
+$imgpre =  Imagem::getPrefeitura($prefeitura->prefoto,$prefeitura->codigoUnidGestora);
 
 $filterPref = new Filter("unidadeGestora","=",  $prefeitura->codigoUnidGestora);
 $filters =  array();
@@ -78,7 +79,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                          }
                         ?>  
                     <h1 class="list-title">
-                        <a href="?p=emissora&id=<?=$_GET['id']?>" title="Voltar para página de EMISSORAS "> 
+                        <a href="?p=emissora&id=<?=$_GET['id']?>&precodigo=<?=$_GET['precodigo']?>" title="Voltar para página de EMISSORAS "> 
                             <!--img style="float: left;" src="<?=$brasao ?>" width="60" height="60" alt="" /> &nbsp; 
                         <img style="float: left;" src="<?=$bandeira ?>" width="80" height="60" alt="" /-->
                         <?= $prenome?>&nbsp;&nbsp;&nbsp;&nbsp; <!--i class="icon-reply"></i-->
@@ -254,13 +255,12 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                             </a>
                         </figure>
                         Site:<br>
-                        <a  href="<?=$emissora->emisite?>" target="_blanck" title="Acesse o SITE da <?=$emissora->eminome?> " ><?= $emissora->emisite?>
-                        </a>
+                       <a  href="<?=$emissora->emisite?>" target="_blanck" title="Acesse o SITE da <?=$emissora->eminome?> " ><strong> <?= $prenome?></strong>                        </a>
                     </li>
                     <li>
                         <figure class="event-thumb">
-                            <a href="<?= $imgimagem ?>" data-rel="prettyPhoto">
-                                <img src="<?= $imgimagem ?>" />
+                            <a href="<?= $imgpre ?>" data-rel="prettyPhoto">
+                                <img src="<?= $imgpre ?>" />
                                 <div class="overlay icon-zoom-in"></div>								
                             </a>
                         </figure>
@@ -342,19 +342,19 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                     </li>
 
                     <li class="group track">
-                        <a class="fa fa-home"></a>
+                        <a class="fa fa-street-view"></a>
                         <h5 class="track-meta">Endereço:</h5>
                         <h4 class="track-title">&nbsp;<?= $secretaria->secendereco ?></h4>
                     </li>
 
                     <li class="group track">
-                        <a class="fa fa-home"></a>
-                        <h5 class="track-meta">Fone:</h5>
+                        <a class="fa fa-phone">
+                        <h5 class="track-meta">Fone:</h5></a>
                         <h4 class="track-title">&nbsp;<?= $secretaria->secfone ?></h4>
                     </li>
 
                     <li class="group track">
-                        <a class="fa fa-home"></a>
+                        <a class="fa fa-envelope"></a>
                         <h5 class="track-meta">Email:</h5>
                         <h4 class="track-meta">&nbsp;<?= $secretaria->secemail ?></h4>
                     </li>

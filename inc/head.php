@@ -9,7 +9,7 @@
         <meta name="author" content="www.magnusoft.com.br">
         <meta name="language" content="pt-br">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="shortcut icon" href="images/piaui_cult.jpg">
+        <link rel="shortcut icon" href="images/piauicult.ico">
         <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/foundation.css">

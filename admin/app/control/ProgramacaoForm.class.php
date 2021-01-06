@@ -36,6 +36,9 @@ class ProgramacaoForm extends TPage
       //  $aprcodigo    = new TDBCombo('aprcodigo','conexao','Apresentador','aprcodigo','{aprcodigo}-{aprnome}','eminome');
         $detalhe = new THtmlEditor('detalhe');
         
+        $emissora->enableSearch();
+        $apresentador->enableSearch();
+        
         if (!empty($procodigo))
         {
             $procodigo->setEditable(FALSE);

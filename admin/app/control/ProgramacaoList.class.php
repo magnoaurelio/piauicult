@@ -34,7 +34,9 @@ class ProgramacaoList extends TPage
         $emissora    = new TDBCombo('emicodigo','conexao','Emissora','emicodigo','{emicodigo}-{eminome}','eminome');
         $apresentador = new TDBCombo('aprcodigo','conexao','Apresentador','aprcodigo','{aprcodigo}-{aprnome}','aprnome');
 
-
+        $emissora->enableSearch();
+        $apresentador->enableSearch();
+        
         // add the fields
         $this->form->addQuickField('Código', $procodigo,  '100%' );
         $this->form->addQuickField('Emissora', $emissora,  '100%' );

@@ -62,7 +62,7 @@ class EmissoraList extends TPage
 
         // creates the datagrid columns
         $column_emicodigo = new TDataGridColumn('emicodigo', 'Código', 'right');
-        $column_emicidade = new TDataGridColumn('emicidade', 'Cidade', 'left');
+        $column_emicidade = new TDataGridColumn('{emicidade}-{prefeitura->prenome}/{emiestado}', 'Cidade', 'left',100);
         $column_eminome = new TDataGridColumn('eminome', 'Nome', 'left');
         $column_emifoto = new TDataGridColumn('emifoto', 'Foto', 'left');
         $column_emiimagem = new TDataGridColumn('emiimagem', 'Imagem', 'left');
@@ -72,7 +72,7 @@ class EmissoraList extends TPage
         $column_emicontato = new TDataGridColumn('emicontato', 'Contato', 'left');
         $column_emiemail = new TDataGridColumn('emiemail', 'Email', 'left');
         $column_emicidade = new TDataGridColumn('emicidade', 'Cidade', 'left');
-        $column_emiestado = new TDataGridColumn('emiestado', 'Estado', 'left');
+        $column_emiestado = new TDataGridColumn('emiestado', 'UF', 'left');
         $column_emioperador = new TDataGridColumn('emioperador', 'Operador', 'left');
         $column_emisobre = new TDataGridColumn('emisobre', 'Sobre', 'left');
         
@@ -95,15 +95,15 @@ class EmissoraList extends TPage
         $this->datagrid->addColumn($column_emicidade);
         $this->datagrid->addColumn($column_eminome);
         $this->datagrid->addColumn($column_emifoto);
-        $this->datagrid->addColumn($column_emiimagem);
+      //  $this->datagrid->addColumn($column_emiimagem);
         $this->datagrid->addColumn($column_emiendereco);
         $this->datagrid->addColumn($column_emibairro);
         $this->datagrid->addColumn($column_emicep);
         $this->datagrid->addColumn($column_emicontato);
         $this->datagrid->addColumn($column_emiemail);
         $this->datagrid->addColumn($column_emiestado);
-        $this->datagrid->addColumn($column_emioperador);
-        $this->datagrid->addColumn($column_emisobre);
+      //  $this->datagrid->addColumn($column_emioperador);
+      //  $this->datagrid->addColumn($column_emisobre);
 
         
         // create EDIT action
@@ -215,7 +215,7 @@ class EmissoraList extends TPage
         }
         
         if (isset($data->emicidade) AND ($data->emicidade)) {
-            $filter = new TFilter('emicidade', 'like', "%{$data->emicidade}%"); // create the filter
+            $filter = new TFilter('emicidade', '=', "$data->emicidade"); // create the filter
             TSession::setValue('Emissora_filter_emicidade',   $filter); // stores the filter in the session
         }
 

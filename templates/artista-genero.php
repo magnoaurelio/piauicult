@@ -125,9 +125,10 @@
                                             endif;
                                             ?> 
                                         </h1>
-                                         <?= substr($genero->genorigem,0,400)?> ...<a href="?p=genero_artista&gencodigo=<?= $genero->gencodigo ?>">Aprenda mais</a>
-                                        <h1 class="entry-title page-title">Músicas do gênero:&nbsp;&nbsp;<a href="?p=genero_artista&gencodigo=<?= $genero->gencodigo ?>">
-                                            <?=strtoupper($genero->gennome)?> 
+                                         <?= substr($genero->genorigem,0,400)?> ...
+                                         <a href="?p=genero_artista&gencodigo=<?= $genero->gencodigo ?>">Aprenda mais</a>
+                                        <h1 class="entry-title page-title">Músicas do gênero:&nbsp;&nbsp;
+                                            <a href="#"> <?=strtoupper($genero->gennome)?> 
                                             </a>
                                         </h1>
                                         

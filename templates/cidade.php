@@ -63,7 +63,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                     <div class="large-12 columns" >
                         
                         <h1 class="list-title">
-                            <a href="?p=emissora&id=<?=$_GET['id']?>">
+                            <a href="?p=emissora&id=<?=$_GET['id']?>&precodigo=<?=$precodigo?>">
                                 <span style="color: #000; font-size: 22;">  </span> 
                                 <?= $prefeitura->prenome?> &nbsp;<span style="color:#000;font-size: 20px;">(Emissora(s))</span>
                             </a>

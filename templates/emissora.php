@@ -101,7 +101,7 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
                                             </a>
                                         </figure>
                                         <a style="text-align: center;"
-                                           href="?p=emissora-detalhe&id=<?= $emissora->emicodigo ?>"
+                                           href="?p=emissora-detalhe&id=<?= $emissora->emicodigo ?>&precodigo=<?= $cidade->precodigo ?>"
                                            class="action-btn"><?= $emissora->eminome ?></a>
                                     </aside>
                                   
