@@ -33,10 +33,25 @@ class ApresentadorForm extends TPage
         $apremissora = new TDBCombo('apremissora','conexao','Emissora','emicodigo','{emicodigo}-{eminome}','eminome');
         $aprcontato = new TEntry('aprcontato');
         $apremail = new TEntry('apremail');
-        $aprfuncao = new TEntry('aprfuncao');
+     //   $aprfuncao = new TEntry('aprfuncao');
+        $aprfuncao = new TCombo('aprfuncao');
         
         $apremissora->enableSearch();
-
+       
+        $aprfuncao->addItems([
+            "APRESENTADOR(a)"=>"APRESENTADOR(a)", 
+            "JORNALISTA-APRESENTADOR(a)"=>"JORNALISTA-APRESENTADOR(a)",
+            "LOCUTOR(a)"=>"LOCUTOR(a)",
+            "COMENTARISTA POLÍTICO"=>"COMENTARISTA POLÍTICO",
+            "COLUNISTA SOCIAL"=>"COLUNISTA SOCIAL",
+            "DIRETOR COMERCIAL"=>"DIRETOR COMERCIAL", 
+            "NOTICIARISTA"=>"NOTICIARISTA",
+            "8-DIRETOR EXECUTIVO"=>"DIRETOR EXECUTIVO", 
+            "9-SONOPLASTA"=>"SONOPLASTA",
+            "10-PROGRMADOR MUSICAL"=>"PROGRMADOR MUSICAL", 
+            "11-DIRETOR DE PROGRAMAÇÃO"=>"DIRETOR DE PROGRAMAÇÃO", 
+            "12-RADIALISTA"=>"RADIALISTA "
+            ]);
         
         
         $data_now = date('dmYHis');

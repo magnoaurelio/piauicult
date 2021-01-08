@@ -56,7 +56,9 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                             <ul class="nav nav-tabs" role="tablist">
                                 <div class="col-lg-12 cabeca">
                                     <header class="entry-top special-top">
-                                        <h1 class="entry-title page-title"><a href="#">Cidades de A - Z</a></h1>
+                                        <h1 class="entry-title page-title">
+                                            <a href="#">Cidades de A - Z</a>
+                                        </h1>
                                     </header>
                                 </div>
 
@@ -131,7 +133,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                                                         <img src="<?=$brasao; ?>" width="100" alt="" />
                                                                     </a>
                                                                 </td>
-                                                                 <td  width="65">
+                                                                <td  width="65">
                                                                     <a href="?p=cidade&id=<?= $cidade->precodigo; ?>" class="" title="<?=$cidade->prenome; ?>">
                                                                         <img src="<?=$bandeira; ?>" width="100" alt="" />
                                                                     </a>
@@ -158,7 +160,6 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                                                         </a>
                                                                     
                                                                 </td>
-                                                                
                                                                 <td  width="150">
                                                                     <a title="Veja os Locais de Eventos de: <?=$cidade->prenome; ?>"style="text-align: center; padding-left: 20px;" href="?p=local-cidade&precodigo=<?=$cidade->precodigo?>">
                                                                         <img src="images/eventos.jpg" width="80" alt="" /><br>Locais de Eventos
@@ -169,7 +170,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                                                         <img src="images/emissoras.jpg" width="80" alt="" /><br> &nbsp; Emissoras
                                                                     </a>
                                                                 </td>
-                                                                 <td  width="120">
+                                                                <td  width="120">
                                                                     &nbsp;
                                                                 </td>
                                                             </tr>
@@ -191,9 +192,9 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                             </div>
 
                         </div>
+                    </article>    
                 </div>
-                </article>
-
+              
             </div>
         </div>
 

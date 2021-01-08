@@ -1,6 +1,6 @@
 <?php
 $api = new Api();
- $filterAmpar = new Filter("precodigo", "<=", 224);
+$filterAmpar = new Filter("precodigo", "<=", 224);
 
 $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->getValue()]));
 //$unidadeGestora = $prefeituraService['codigoUnidGestora'];
@@ -47,8 +47,10 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
             </header>   
           </article>
         </div>
-        
-             <article class="post group">
+          <section class="events-section events-upcoming">
+                              <ol class="tracklisting">
+                               <ol class="widget-list">
+        <article class="post group">
                 <div class="artistas-container row">
                     <div class="large-12 columns">
                          <?php
@@ -69,7 +71,9 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
                             if ($tm < 1)
                                 continue;
                             ?>
-                        <table>
+                          
+                               <li>
+                            <table>
                            
                             <tr class="group track">
                             <td>
@@ -115,7 +119,11 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
                                 endif;
                               
                             ?>
-                                </table>   
+                            </tr>
+                             
+                            </table> 
+                               </li>
+                           
                                 <?php
                                }
                             ?>
@@ -124,6 +132,9 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
                         </div>
                     </div>
                  </article>
+                   </ol>
+                             </ol>
+                            </section>
          </div>
         <!-- /large-12 -->
     </div>

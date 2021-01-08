@@ -65,8 +65,6 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
                                 <section class="events-section events-upcoming">
                                     <ol class="tracklisting">
                                    
-                                  
-                                    <!--h3>Locais de Eventos</h3-->
                                     <ol class="widget-list">
                                         <?php
                                             if ($tm < 1) {

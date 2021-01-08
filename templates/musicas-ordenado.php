@@ -94,6 +94,9 @@
                                                     $arranjos_format = implode(" , ", $arranjos_format);
 
                                                     // musicos
+                                                    if ($musica->muscodigo = null):
+                                                        $musica->muscodigo = 1;
+                                                    endif;
                                                     $musicos = Musica::getMusicos($musica->muscodigo);
                                                     $musicos_format = [];
                                                     foreach ($musicos as $musico):
@@ -197,62 +200,7 @@
                                                                     <small></small><br/>
                                                                     <small></small>
                                                                 </td>
-                                                                <td style="padding-left: 20px; padding-right: 10px;" >
-                                                                    <div class="row">
-                                                                       <small><img src="/images/icone/music.png" width="16"> Disco</small>
-                                                                       <a href="?p=album&id=<?= $disco_musica->discodigo ?>" title="Ir para o DISCO:  <?=$disco_musica->disnome ?> "class=""><strong><?=$disco_musica->disnome ?></strong> </a>
-                                                                     </div>
-                                                                    <hr>
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4">
-                                                                            <small><img src="/images/icone/star.png" width="16"> Autor(es):</small>
-                                                                        </div>
-                                                                        <div class="col-lg-8" style="margin-left:20px;"><small><?= $autores_format ?></small></div>
-                                                                    </div>
-
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4">
-                                                                            <small><img src="/images/icone/microphone.png" width="16"> Interprete(s):</small>
-                                                                        </div>
-                                                                        <div class="col-lg-8" style="margin-left:20px;"><small><?= $interpretes_format ?></small></div>
-                                                                    </div>
-
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4">
-                                                                            <small><img src="/images/icone/music.png" width="16"> Arranjos:</small>
-                                                                        </div>
-                                                                        <div class="col-lg-8" style="margin-left:20px;"><small><?= $arranjos_format ?></small></div>
-                                                                    </div>
-
-                                                                   <div class="row">
-                                                                       <div class="col-lg-4">
-                                                                            <small><img src="/images/icone/star.png" width="16"> Músicos:</small> & <small><img src="/images/icone/guitar.png" width="16"> Instrumentos:</small>
-                                                                        </div>
-                                                                        <!--div class="col-lg-8"><small><?= $musicos_format ?></small></div-->
-                                                                        <div class="col-lg-8" style="margin-left:20px;"><small><?= $instrumentos_format ?></small></div>
-                                                                    </div>
-
-                                                                    <!--div class="row">
-                                                                        <div class="col-lg-4">
-                                                                            <small><img src="/images/icone/guitar.png" width="16"> Instrumentos:</small>
-                                                                        </div>
-                                                                        <div class="col-lg-8"><small><?= $instrumentos_format ?></small></div>
-                                                                    </div-->
-
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4">
-                                                                            <small><img src="/images/icone/lightbulb-off.png" width="16"> Produtores:</small>
-                                                                        </div>
-                                                                        <div class="col-lg-8" style="margin-left:20px;"><small><?= $produtores_format ?></small></div>
-                                                                    </div>
-
-                                                                    <div class="row">
-                                                                        <div class="col-lg-4">
-                                                                            <small><img src="/images/icone/write.png" width="16"> Artes:</small>
-                                                                        </div>
-                                                                        <div class="col-lg-8" style="margin-left:20px;"><small><?= $artes_format ?></small></div>
-                                                                    </div>
-                                                                </td>
+                                                              
                                                             </tr>
                                                         </table>
 

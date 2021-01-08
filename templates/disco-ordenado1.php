@@ -104,7 +104,6 @@
     <!-- /large-12 -->
 </div>
 <!-- /main -->
-</div>
 <!-- /main-wrap -->
 <script>
     $('.selecao').change(function (e) {

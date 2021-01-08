@@ -231,8 +231,6 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                     </li>
                 </ol>   
             </aside><!-- /widget -->
-
-            </aside><!-- /widget -->
             <aside class="widget group">
                 <h3 class="widget-title"><?= $secretaria->secnome?></h3>
                 <ol class="widget-list widget-list-single">
@@ -319,8 +317,6 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
 
                 </ol>
             </aside><!-- /widget -->
-          
-
         </div>
     </div><!-- /main -->
 </div><!-- /main-wrap -->
