@@ -37,7 +37,7 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
 
                     
                    </div>
-                       <h1 class="entry-title page-title" style="margin-top:5px;">
+                       <h1 class="entry-title page-title" style="margin-top:15px;">
                          <img src="images/lupa.png" width="35" height="35" alt="lupa" />&nbsp;&nbsp;&nbsp;
                          <a href="?p=emissora&id=<?= $emissora->emicodigo ?>?cidade&id=<?= $prefeitura->precodigo ?>">
                              <a href="#">Cidades & Emissoras</a>
@@ -47,12 +47,14 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
             </header>   
           </article>
         </div>
-          <section class="events-section events-upcoming">
-                              <ol class="tracklisting">
-                               <ol class="widget-list">
+    
+      
         <article class="post group">
                 <div class="artistas-container row">
                     <div class="large-12 columns">
+                        <section class="events-section events-upcoming">
+                             <ol class="tracklisting">
+                             <ol class="widget-list">
                          <?php
                             if (isset($_GET['precodigo'])) {
                                 $cidades = $prefeituraService->getByPrecodigo($_GET['precodigo']);
@@ -71,12 +73,13 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
                             if ($tm < 1)
                                 continue;
                             ?>
-                          
+                            
                                <li>
                             <table>
                            
                             <tr class="group track">
                             <td>
+                                
                                 <a href="?p=cidade&id=<?= $cidade->precodigo; ?>" class="entry-title page-title" title="<?= $cidade->prenome; ?>">
                                     <h4 class="entry-title page-title"> <?= $cidade->prenome; ?></h4>
                                     <img src="<?= $preimagem; ?>" width="300" height="200" alt=""/>
@@ -122,19 +125,21 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
                             </tr>
                              
                             </table> 
-                               </li>
+                                   <!-- COLOCAR AQUI -->
+                                </li>
                            
                                 <?php
                                }
                             ?>
-                                
+                           
+                                  </ol>
+                             </ol>
+                                  </section>    
                      
                         </div>
                     </div>
                  </article>
-                   </ol>
-                             </ol>
-                            </section>
+          
          </div>
         <!-- /large-12 -->
     </div>
