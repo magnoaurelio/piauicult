@@ -45,7 +45,7 @@ class Livro extends \Adianti\Database\TRecord
     //    $this->read = parent::getResult();
     //    $this->setParam();
     }
-
+    
     function get_Disco(){
       $disco =  new Disco($this->livdisco);
      return $disco;

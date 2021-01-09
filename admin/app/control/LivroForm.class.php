@@ -29,7 +29,7 @@ class LivroForm extends TPage
         // create the form fields
         $livcodigo = new TEntry('livcodigo');
         $livnome = new TEntry('livnome');
-        $livcategoria = new \Adianti\Widget\Form\TCombo('livcategoria');
+        $livcategoria = new TCombo('livcategoria');
         $livtipo = new TCombo('livtipo');
         $livisbn = new TEntry('livisbn');
       //  $livautor = new TEntry('livautor');

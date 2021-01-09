@@ -255,5 +255,29 @@ class DadosFixos{
             return $tipos;
         endif;
     }
+    
+     public static function TipoLivro($id = null) {
+        $livro = [
+            1 => "Cancioneiro",
+            2 => "Encarte",
+        ];
+        if ($id == null) {
+            return $livro;
+        } else {
+            return $livro[$id];
+        }
+    }
+    
+     public static function LivroCategoria($id = null) {
+        $livro = [
+            1 => "Cancioneiro",
+            2 => "Encarte",
+        ];
+        if ($id == null) {
+            return $livro;
+        } else {
+            return $livro[$id];
+        }
+    }
 
 }

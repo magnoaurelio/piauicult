@@ -84,7 +84,7 @@ class LivroList extends TPage
         // creates the datagrid columns
         $column_livcodigo = new TDataGridColumn('livcodigo', 'Código', 'right', 50);
         $column_livnome = new TDataGridColumn('livnome', 'Nome', 'left');
-        $column_livtipo = new TDataGridColumn('Tipo', 'Tipo', 'right');
+        $column_livtipo = new TDataGridColumn('livtipo', 'Tipo', 'right');
         $column_livisbn = new TDataGridColumn('livisbn', 'ISBN', 'left');
         $column_livautor = new TDataGridColumn('Artista->artusual', 'Autor', 'left');
         $column_livgenero = new TDataGridColumn('livgenero', 'Gênero', 'right');

@@ -419,7 +419,6 @@ class DadosFixos {
         return $cidades->prefeituras;
     }
     
-    
     public static function TipoLivro($id = null) {
         $livro = [
             1 => "Cancioneiro",

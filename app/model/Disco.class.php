@@ -179,8 +179,9 @@ class Disco extends Read {
     public static function getLivro($idDisco){
         $read  =  new Read();
         $read->ExeRead('livro','WHERE livdisco = :disco limit 1',"disco={$idDisco}");
-        if($read->getRowCount())
+        if ($read->getRowCount()) {
             return new Livro($read->getResult()[0]['livcodigo']);
+        }
         return false;
     }
     
