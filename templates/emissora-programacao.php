@@ -170,7 +170,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                             <table width="100%" border="0" style="margin-left: 0px;">
                                     <tr>
                                         <td width="100">
-                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
+                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>&procodigo=<?= $procodigo ?>" id="" class="search-btn">
                                               <img src="images/piauicult.jpg" width="120" alt="" />
                                               <h4 class="track-title">
                                               PIUAICult - <?= $procodigo ?>
@@ -178,7 +178,7 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                             </a> 
                                         </td>
                                          <td  width="100">
-                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn">
+                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>&procodigo=<?= $procodigo ?>" id="" class="search-btn">
                                                 <h4 class="track-title"><?= DataCalendario::date2br($programacao['dataplay']) ?></h4>
                                              </a> 
                                         </td>
@@ -195,13 +195,13 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                                         endif;
                         
                                                ?>
-                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn" id="" class=""> 
+                                             <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>&procodigo=<?= $procodigo ?>" id="" class="search-btn" id="" class=""> 
                                                 <h4 class="track-title"><?= $aprnome ?></h4>
                                              </a> 
                                              <?php } ?>
                                         </td>
                                           <td width="100" style="padding-left: 0px;">
-                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn"" id="" class="search-btn">
+                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>&procodigo=<?= $procodigo ?>" id="" class="search-btn"" id="" class="search-btn">
                                             <img src="<?=$aprfoto?>" width="120" height="120" alt="" />
                                             </a> 
                                         </td>
@@ -219,14 +219,14 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                       
                                          <td  width="100">
                                             <h4 class="track-title">
-                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn"" id="" class="search-btn">
+                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>&procodigo=<?= $procodigo ?>" id="" class="search-btn"" id="" class="search-btn">
                                                 <?=$programacao['pronome']?>
                                             </a>
                                             </h4>
                                         </td>
                                          <td  width="100">
                                              <h4 class="track-title">
-                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn"" id="" class="search-btn">
+                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>&procodigo=<?= $procodigo ?>" id="" class="search-btn"" id="" class="search-btn">
                                                 <?=$programacao['prohorario']?>
                                             </a>
                                             </h4>
@@ -249,8 +249,8 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
                                           } ?>
                                         <td  width="50">
                                             <h4 class="track-title">
-                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>" id="" class="search-btn"" id="" class="search-btn">
-                                                <?=$n?> 
+                                            <a href="?p=emissora-programacao&emicodigo=<?= $emissora->emicodigo ?>&precodigo=<?= $precodigo ?>&aprcodigo=<?= $aprcodigo ?>&procodigo=<?= $procodigo ?>" id="" class="search-btn"" id="" class="search-btn">
+                                                &nbsp;<?=$n?> 
                                             </a>
                                                musicas 
                                            </h4>
