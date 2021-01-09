@@ -486,7 +486,7 @@ class MusicaList extends TPage
             
             // creates a repository for Musica
             $repository = new TRepository('Musica');
-            $limit = 15;
+            $limit = 25;
             // creates a criteria
             $criteria = new TCriteria;
             $artuser = (int)TSession::getValue('artuser');

@@ -421,8 +421,11 @@ class DadosFixos {
     
     public static function TipoLivro($id = null) {
         $livro = [
-            1 => "Cancioneiro",
-            2 => "Encarte",
+            1 => "Letras",
+            2 => "Partituras",
+            3 => "Cinema",
+            4 => "Humor",
+            5 => "Poesia"
         ];
         if ($id == null) {
             return $livro;
