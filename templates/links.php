@@ -22,7 +22,7 @@
                                         <div class="overlay icon-picture"></div>
                                 </a>			
                         </figure>
-                        <h4 class="list-title"><a href="gallery.html">Link Culturais</a></h4>
+                        <h4 class="list-title"><a href="#">Link Culturais</a></h4>
                         <a href="#" class="action-btn">Veja mais...</a>
                     </div>
                 </li>
