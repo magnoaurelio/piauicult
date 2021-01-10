@@ -3,7 +3,7 @@
         <div class="row">
                 <div class="large-12 columns">
                         <h3>Discos & Músicas com Detalhes</h3>
-                </div> //large-12 
+                </div> 
         </div> <!--/row -->
 </div> <!--/section -->
 
@@ -22,7 +22,7 @@ $artista = $disco->getParticipantes()[0];
 
 ?>
 
-<div id="main-wrap" style="padding-top: 85px">
+<div id="main-wrap" style="padding-top: 0px">
     <div id="main" class="row">
         
         
@@ -31,9 +31,9 @@ $artista = $disco->getParticipantes()[0];
                 <ol class="widget-list widget-list-single">
                     <li>
                         <figure class="event-thumb">
-                            <a href="<?= $imgp ?>" data-rel="prettyPhoto">
+                            <a href="?p=album&id=<?= $disco->discodigo ?>" title="Voltar para o DISCO: <?= $disco->disnome ?>">
                                 <img src="<?= $imgp ?>" /> <?= $disco->disnome ?>(<?= $artista->artusual ?>)
-                                <div class="overlay icon-zoom-in"></div>								
+                                <!--div class="overlay icon-zoom-in"></div-->								
                             </a>
                         </figure>
                         <h5 class="list-subtitle">Clique &nbsp; para  &nbsp;  ampliar</h5>

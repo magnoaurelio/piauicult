@@ -202,22 +202,33 @@ $artista = $disco->getParticipantes()[0];
                                     <?php else: ?>
                                         <a id="<?= $musica->muscodigo ?>" class="media-btn" style="background-color:#CCC;">Play</a>
                                     <?php endif; ?>
-                                    <h5 class="track-meta">&nbsp;<?= $musica->musduracao ?> &nbsp; <a href="?p=estilos&genero=<?= $genero['gencodigo'] ?>"><?= $genero['gennome'] ?></a> &nbsp; <?=substr($musica->mussobre,0,120) ?></h5>
+                                    <h5 class="track-meta">&nbsp;<?= $musica->musduracao ?> 
+                                        &nbsp; <a href="?p=estilos&genero=<?= $genero['gencodigo'] ?>"><?= $genero['gennome'] ?></a> 
+                                        &nbsp; <?=substr($musica->mussobre,0,120) ?>
+                                    </h5>
                                     <h4 class="track-title"><?= $musica->musnome ?></h4>
-                                    <a href="?p=album-musica&id=<?= $disco_musica->discodigo ?>&muscodigo=<?= $musica->muscodigo ?>"> &nbsp;<img src="/images/icone/music.png" width="16"></a>
+                                    <a href="?p=album-musica&id=<?= $disco_musica->discodigo ?>&muscodigo=<?= $musica->muscodigo ?>"> 
+                                        &nbsp;<img src="/images/icone/music.png" width="16">
+                                    </a>
                                     <br/>
                                     <table width="100%" border="0">
                                         <tr>
                                             <td  width="90">
                                                 <small><img src="/images/icone/music.png" width="16"> Disco</small>
-                                                <a href="?p=album&id=<?= $disco_musica->discodigo ?>" title="Ir para o DISCO:  <?=  $disco_musica->disnome ?> "class=""><img src="admin/files/discos/<?= $disco_musica->disimagem ?>" width="90" alt="" /></a>
+                                                <a href="?p=album&id=<?= $disco_musica->discodigo ?>" title="Ir para o DISCO:  <?=  $disco_musica->disnome ?> "class="">
+                                                    <img src="admin/files/discos/<?= $disco_musica->disimagem ?>" width="90" alt="" />
+                                                </a>
                                             </td>
                                               <td  width="90">  <small><img src="/images/icone/star.png" width="16"> Autor</small>
-                                                <a href="?p=artist&id=<?= $autor->artcodigo ?>"  title="Ir para o AUTOR:  <?=  $autor->artusual ?> "><img src="admin/files/artistas/<?= $autor->artfoto ?>" width="90" alt="" /></a>
+                                                <a href="?p=artist&id=<?= $autor->artcodigo ?>"  title="Ir para o AUTOR:  <?=  $autor->artusual ?> ">
+                                                    <img src="admin/files/artistas/<?= $autor->artfoto ?>" width="90" alt="" />
+                                                </a>
                                             </td>
                                               <td  width="90">
                                                 <small><img src="/images/icone/microfone.png" width="16"> Interprete</small>
-                                                <a href="?p=artist&id=<?= $interprete->artcodigo ?>"  title="Ir para o INTÉRPRETE:  <?=  $interprete->artusual ?> "><img src="admin/files/artistas/<?= $interprete->artfoto  ?>" width="90" alt="" /></a>
+                                                <a href="?p=artist&id=<?= $interprete->artcodigo ?>"  title="Ir para o INTÉRPRETE:  <?=  $interprete->artusual ?> ">
+                                                    <img src="admin/files/artistas/<?= $interprete->artfoto  ?>" width="90" alt="" />
+                                                </a>
                                             </td>
                                           <td width="10" align="right">
                                                 <small></small><br/>
@@ -272,6 +283,7 @@ $artista = $disco->getParticipantes()[0];
 
 
                                     <div class="action-btns">
+                                        
                                         <?php
                                          $livro = Disco::getLivro($disco_musica->discodigo);
                                        //   if (!$livro->livtipo){
@@ -282,7 +294,9 @@ $artista = $disco->getParticipantes()[0];
                                             <img src="/images/icone/book.fw.png" width="15">&nbsp;<?=DadosFixos::TipoLivro($livro->livtipo)?>
                                         </a>&nbsp;
                                         <?php else: ?>
-                                            <a  onclick="Topo()" class="action-btn" style="background-color:#CCC;"><i class="fa fa-book"></i> Cancioneiro/Encarte</a>
+                                            <a  onclick="Topo()" class="action-btn" style="background-color:#CCC;">
+                                                <i class="fa fa-book"></i> Cancioneiro/Encarte
+                                            </a>
                                         <?php endif; ?>
                                          <?php if ($musica->vidativo == "S"): ?>
                                            <a title="Veja o VÍDEO desta MUSICA" href="<?= $musica->musvideo ?>" data-rel="prettyPhoto"   onclick="Topo()" class="action-btn">
@@ -293,16 +307,16 @@ $artista = $disco->getParticipantes()[0];
                                         <?php endif; ?>
                                           <?php if ($musica->letativo == "S"): ?>
                                            <a title="Veja a LETRA desta MÚSICA" href="admin/files/musicas/letra/<?= $musica->musletra ?>"  onclick="Topo()" data-rel="prettyPhoto" class="action-btn">
-                                               <img src="/images/icone/letra.fw.png" width="15">&nbsp;Letra
+                                               <img src="/images/icone/letra.fw.png" width="15">&nbsp;Letras
                                            </a>&nbsp;
                                         <?php else: ?>
-                                         <a data-rel="prettyPhoto"   onclick="Topo()" class="action-btn" style="background-color:#CCC;">Letra</a>
+                                         <a data-rel="prettyPhoto"   onclick="Topo()" class="action-btn" style="background-color:#CCC;"></a>
                                         <?php endif; ?>
-
+                                         <a title="Veja os DETALHES Completos do DISCO" href="?p=album-musica&id=<?= $disco_musica->discodigo ?>&muscodigo=<?= $musica->muscodigo ?>" onclick="Topo()" class="action-btn"  > 
+                                              &nbsp;<img src="/images/icone/music.png" width="13"  >&nbsp;Detalhe
+                                         </a>
                                     </div>
-                                    <div id="lyrics-1" class="track-lyrics-hold">
-                                        <p><img src="admin/files/musicas/letra/<?= $musica->musletra ?>" width="auto"  alt="" /></p>
-                                    </div>
+                                    
 
                                 </li>
 
