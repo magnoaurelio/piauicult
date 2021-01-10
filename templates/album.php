@@ -64,7 +64,9 @@ $artista = $disco->getParticipantes()[0];
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header" style="background:#262626 ">
-                                    <h5 class="modal-title" id="exampleModalLabel"><img src="images/logo.png" style="max-height: 30px;" alt="" /></h5>
+                                    <h5 class="modal-title" id="exampleModalLabel">
+                                        <img src="images/logo.png" style="max-height: 30px;" alt="" />
+                                    </h5>
                                 </div>
                                 <div class="modal-body" id="body">
                                     <?php include "player/disco.php"?>
@@ -201,7 +203,9 @@ $artista = $disco->getParticipantes()[0];
                                         <a id="<?= $musica->muscodigo ?>" class="media-btn" style="background-color:#CCC;">Play</a>
                                     <?php endif; ?>
                                     <h5 class="track-meta">&nbsp;<?= $musica->musduracao ?> &nbsp; <a href="?p=estilos&genero=<?= $genero['gencodigo'] ?>"><?= $genero['gennome'] ?></a> &nbsp; <?=substr($musica->mussobre,0,120) ?></h5>
-                                    <h4 class="track-title"><?= $musica->musnome ?></h4><br/>
+                                    <h4 class="track-title"><?= $musica->musnome ?></h4>
+                                    <a href="?p=album-musica&id=<?= $disco_musica->discodigo ?>&muscodigo=<?= $musica->muscodigo ?>"> &nbsp;<img src="/images/icone/music.png" width="16"></a>
+                                    <br/>
                                     <table width="100%" border="0">
                                         <tr>
                                             <td  width="90">
