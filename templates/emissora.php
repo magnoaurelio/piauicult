@@ -53,7 +53,7 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
                 <div class="artistas-container row">
                     <div class="large-12 columns">
                         <section class="events-section events-upcoming">
-                             <ol class="tracklisting">
+                          <ol class="tracklisting">
                              <ol class="widget-list">
                          <?php
                             if (isset($_GET['precodigo'])) {
@@ -74,37 +74,38 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
                                 continue;
                             ?>
                             
-                               <li>
-                            <table>
+                            <li>
+                            
+                               <aside class="widget group" style="width: 300px; height:200px; margin-right: 3px;"> 
+                                    <a href="?p=cidade&id=<?= $cidade->precodigo; ?>" class="entry-title page-title" title="<?= $cidade->prenome; ?>">
+                                        <h4 class="entry-title page-title"> <?= $cidade->prenome; ?></h4>
+                                        <img src="<?= $preimagem; ?>" width="300" height="200" alt=""/>
+                                    </a>
+                               </aside>
+                            
                            
-                            <tr class="group track">
-                            <td>
-                                
-                                <a href="?p=cidade&id=<?= $cidade->precodigo; ?>" class="entry-title page-title" title="<?= $cidade->prenome; ?>">
-                                    <h4 class="entry-title page-title"> <?= $cidade->prenome; ?></h4>
-                                    <img src="<?= $preimagem; ?>" width="300" height="200" alt=""/>
-                                </a>
-                                <hr>
-                            </td>
+                            <table>
+                            <tr>   
                             <?php
                             if ($emissoras->getResult()):
                             $cont = 0;
                            // $tm = sizeof($emissoras);
                             foreach ($emissoras->getResult() as $emissora):
                                 $emissora = new Emissora($emissora['emicodigo']);
-                                if ($cont == 9):
+                                if ($cont == 7):
                                     $cont = 0;
                                     echo "</tr>";
                                 endif;
                                 ?>
-                                <td>
-                              
-                                   <aside class="widget group" style="width: 90px; height:90px; margin-right: 3px;"> 
+                           
+                            
+                           <td>
+                                   <aside class="widget group" style="width: 150px; height:150px; margin-right: 3px;"> 
                                       <figure class="event-thumb" style="margin: 0px;">  
                                             <a href="?p=emissora-detalhe&id=<?= $emissora->emicodigo ?>&precodigo=<?= $cidade->precodigo ?>"
                                                title="<?= $emissora->eminome ?>">
                                                 <img src="admin/files/emissoras/<?= $emissora->emifoto ?>"
-                                                     style="width: 90px; height: 90px;" alt=""/>
+                                                     style="width: 150px; height: 150px;" alt=""/>
                                             </a>
                                         </figure>
                                         <a style="text-align: center;"
@@ -113,11 +114,12 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
                                     </aside>
                                   
                                 </td>
+                                     
                                  <?php
                                 $cont++;
                                 endforeach;
                                 endif;
-                                if ($cont <= 9 || ($tm % 9 == 0)):
+                                if ($cont <= 7 || ($tm % 7 == 0)):
                                     echo "</tr>";
                                 endif;
                               
@@ -126,19 +128,17 @@ $prefeituraService = new PrefeituraService($api->getPrefeitura([$filterAmpar->ge
                              
                             </table> 
                                    <!-- COLOCAR AQUI -->
-                                </li>
+                            </li>
                            
-                                <?php
-                               }
-                            ?>
+                            <?php } ?>
                            
-                                  </ol>
-                             </ol>
-                                  </section>    
+                              </ol>
+                          </ol>
+                        </section>    
                      
-                        </div>
-                    </div>
-                 </article>
+                     </div>
+                  </div>
+          </article>
           
          </div>
         <!-- /large-12 -->

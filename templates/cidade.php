@@ -55,7 +55,14 @@ $bandeira =  Imagem::getPrefeitura($prefeitura->prebandeira,$prefeitura->codigoU
 
 
 ?>
-<div id="main-wrap">
+<div id="section" style="background:url(images/header.jpg) no-repeat top center">
+	<div class="row">
+		<div class="large-12 columns">
+			<h3>Cidades - Artistas - Emissoras</h3>
+		</div><!-- /large-12 -->
+	</div><!-- /row -->
+</div><!-- /section -->
+<div id="main-wrap" style="padding-top: 10px">
     <div id="main" class="row">
         <div class="large-9 columns">
             <article class="post group" style="padding: 10px;">
