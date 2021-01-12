@@ -21,7 +21,7 @@
                 <header class="entry-top special-top"> 
                     
                     <div class="large-3 columns" style="margin-top:3px;">         
-                    <select class="form-control selecao">                       
+                    <select class="form-control selecao select2">
                             <option value="0" >Selecione todos os artistas</option>                        
                             <?php
                              class Total{

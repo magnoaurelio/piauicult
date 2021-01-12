@@ -33,6 +33,8 @@
             gtag('config', 'UA-144910739-1');
         </script>
 
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+
     </head>
 
     <script src="js/jquery-1.10.1.min.js"></script>
@@ -49,3 +51,5 @@
     <script src="js/scripts.js"></script>
     <script src="https://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
     <script src="https://kit.fontawesome.com/d1c2f91e8f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
